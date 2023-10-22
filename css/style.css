@@ -4103,7 +4103,7 @@ input[type="button"].btn-block {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 0.5rem 1rem;
 }
 
@@ -9981,4 +9981,8 @@ h6,
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.pink-text:hover {
+  color: #FD9F9D;
 }
