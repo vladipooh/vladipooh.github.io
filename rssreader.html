@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSS Feed Reader</title>
+</head>
+<body>
+    <h1>RSS Feed Reader</h1>
+    
+    <div id="rss-feed"></div>
+
+    <script>
+        // URL of the RSS feed you want to read
+        const rssFeedURL = 'https://phviro.blogspot.com/feeds/posts/default?alt=rss'; // Replace with your RSS feed URL
+
+        // Function to fetch and parse the RSS feed
+        function fetchAndDisplayRSSFeed() {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    parseRSSFeed(xhr.responseXML);
+                }
+            };
+            xhr.open('GET', rssFeedURL, true);
+            xhr.send();
+        }
+
+        // Function to parse and display the RSS feed
+        function parseRSSFeed(xml) {
+            const feedItems = xml.querySelectorAll('item'); // Modify to match your RSS structure
+            const rssFeedDiv = document.getElementById('rss-feed');
+            let html = '<ul>';
+
+            feedItems.forEach(function (item) {
+                const title = item.querySelector('title').textContent;
+                const link = item.querySelector('link').textContent;
+                const description = item.querySelector('description').textContent;
+
+                html += '<li>';
+                html += `<a href="${link}" target="_blank">${title}</a><br>`;
+                html += description;
+                html += '</li>';
+            });
+
+            html += '</ul>';
+            rssFeedDiv.innerHTML = html;
+        }
+
+        // Fetch and display the RSS feed when the page loads
+        window.addEventListener('load', fetchAndDisplayRSSFeed);
+    </script>
+</body>
+</html>
