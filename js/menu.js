@@ -1,7 +1,8 @@
 const menuItems = [
     { text: "Home", link: "index.html" },
     { text: "Experience", link: "experience.html" },
-    { text: "Research & Projects", link: "research.html",
+    { text: "Research", link: "research.html"},
+    { text: "Projects", link: "#",
         submenu: [
             { text: "Blood Glucose Control in T1D Using Reinforcement Learning", link: "#service1" },
             { text: "COVID-19 X-ray Image Classification", link: "#service2" },
@@ -36,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
             menuLink.textContent = item.text;
 
             // Check if the item is the current page
-            console.log(item.link+" and "+ currentPageURL)
             if (item.link === currentPageURL) {
                 menuLink.classList.add("active");
             }
@@ -50,13 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuLink.setAttribute("aria-haspopup", "true");
 
                 const submenu = document.createElement("div");
-                submenu.className = "dropdown-menu border-0";
+                submenu.className = "dropdown-menu border-0 text-wrap";
+                submenu.setAttribute("style", "width:20rem");
 
                 item.submenu.forEach((subitem) => {
+
                     const subLink = document.createElement("a");
                     subLink.href = subitem.link;
-                    subLink.textContent = subitem.text;
-                    subLink.className = "dropdown-item pink-text";
+                    subLink.textContent = "➧ " + subitem.text;
+                    subLink.className = "dropdown-item pink-text text-wrap";
 
                     // Check if the subitem is the current page
                     if (subitem.link === currentPageURL) {
@@ -86,8 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
         $(this).removeClass('show');
         $(this).find('.dropdown-menu').removeClass('show');
       });
-
-    $('a[href*="research.html"]').on( "click", function() {
-        window.location.href = "research.html";
-    });
+      $('.dropdown').click(function() {
+        $(this).addClass('show');
+        $(this).find('.dropdown-menu').addClass('show');
+      }, function() {
+        $(this).removeClass('show');
+        $(this).find('.dropdown-menu').removeClass('show');
+      });
 });
