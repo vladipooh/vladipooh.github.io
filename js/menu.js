@@ -14,7 +14,7 @@ const menuItems = [
     //{ text: "Rewards", link: "rewards.html" },
     { text: "Blog", link: "blog.html" },
     { text: "Activities", link: "#" },
-    { text: "Youtube", link: "https://www.youtube.com/@natangg" },
+    { text: "Youtube", link: "youtube.html" },
     
     // Add more menu items as needed
 ];
