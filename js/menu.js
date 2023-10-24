@@ -12,7 +12,7 @@ const menuItems = [
         ],
     },
     //{ text: "Rewards", link: "rewards.html" },
-    { text: "Blog", link: "https://phviro.blogspot.com/" },
+    { text: "Blog", link: "blog.html" },
     { text: "Activities", link: "#" },
     { text: "Youtube", link: "https://www.youtube.com/@natangg" },
     
