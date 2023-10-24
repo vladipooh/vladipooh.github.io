@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Feed</title>
+</head>
+<body>
+    <div class="feed">
+        <h2>YouTube Feed for NaTang | หน้าต่าง</h2>
+        <p><a href="https://www.youtube.com/channel/UC58QgysOyqYk4Uhc_rwXgpw">Visit Channel</a></p>
+        <div id="entries">
+            <!-- Entries will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // URL of the YouTube XML feed with CORS proxy
+        const url = 'https://corsproxy.io/?' + encodeURIComponent('https://www.youtube.com/feeds/videos.xml?channel_id=UC58QgysOyqYk4Uhc_rwXgpw');
+
+        // Fetch the XML data using the CORS proxy
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, 'text/xml');
+                const entries = xmlDoc.querySelectorAll('entry');
+
+                const entriesContainer = document.getElementById('entries');
+
+                // Limit the number of entries to 21
+                for (let i = 0; i < 21 && i < entries.length; i++) {
+                    const entry = entries[i];
+                    const title = entry.querySelector('title').textContent;
+                    const videoLink = entry.querySelector('link[rel="alternate"]').getAttribute('href');
+                    const published = entry.querySelector('published').textContent;
+                    const description = entry.getElementsByTagName('media:description')[0].textContent;
+                    const thumbnailEntry = entry.getElementsByTagName('media:thumbnail');
+                    const thumbnail = thumbnailEntry[0].getAttribute('url');
+                    
+                    console.log(title)
+                    console.log(thumbnail)
+
+                    const entryDiv = document.createElement('div');
+                    entryDiv.classList.add('entry');
+                    
+                    entryDiv.innerHTML = `
+                        <div class="thumbnail">
+                            <img src="${thumbnail}" alt="${title} Thumbnail">
+                        </div>
+                        <div class="info">
+                            <h3><a href="${videoLink}">${title}</a></h3>
+                            <p>Published on: ${ new Date(published).toDateString()}</p>
+                            <p>Description: ${description}</p>
+                        </div>
+                    `;
+
+                    entriesContainer.appendChild(entryDiv);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+</html>
