@@ -9986,3 +9986,18 @@ h6,
 .pink-text:hover {
   color: #FD9F9D;
 }
+
+.custom-height-300 {
+  max-height: 300px; /* Set the desired maximum height */
+  object-fit: cover;
+}
+
+.image-container {
+  max-height: 300px; /* Set the desired maximum height */
+  overflow: hidden;  /* Hide any overflow */
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container while preserving the aspect ratio */
+}

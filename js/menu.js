@@ -2,14 +2,14 @@ const menuItems = [
     { text: "Home", link: "index.html" },
     { text: "Experience", link: "experience.html" },
     { text: "Research", link: "research.html"},
-    { text: "Projects", link: "#",
-        submenu: [
+    { text: "Projects", link: "projects.html",
+        /* submenu: [
             { text: "Blood Glucose Control in T1D Using Reinforcement Learning", link: "#service1" },
             { text: "COVID-19 X-ray Image Classification", link: "#service2" },
             { text: "University Major Recommendation with MBTI and Machine Learning", link: "#service2" },
             { text: "Salary Predictor Using Deep Learning", link: "#service2" },
             { text: "Data Visualization Web Dashboard Using JavaScript and Tableau", link: "#service2" },
-        ],
+        ], */
     },
     //{ text: "Rewards", link: "rewards.html" },
     { text: "Blog", link: "blog.html" },
