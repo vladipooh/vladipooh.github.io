@@ -113,60 +113,35 @@
     <script src="js/footer.js"></script>
     <script>appendContentToFooter();</script>
     <script>
-        const corsProxyURL = 'https://corsproxy.io/?';
-        const feedContainer = document.getElementById('rss-feed');
-        
-        function displayRSSFeed(feed) {
-            const items = feed.querySelectorAll('item'); // Modify to match your RSS structure
-            let html = '';
-            
-            items.forEach(function (item) {
-                const titleElement = item.querySelector('title');
-                const title = titleElement ? titleElement.textContent : 'No Title';
-                const linkElement = item.querySelector('link');
-                const link = linkElement ? linkElement.textContent : 'No link';
-                const description = item.getElementsByTagName('atom:summary')[0].textContent;
-                //const description = descriptionElement ? descriptionElement.textContent : 'No description';
-                const pubDate = item.querySelector('pubDate').textContent;
-                const thumbnail = item.getElementsByTagName('media:thumbnail')[0].getAttribute('url');
+        const rssFeedURL = 'https://api.rss2json.com/v1/api.json?rss_url=https://phviro.blogspot.com/feeds/posts/default?alt=rss';
 
-                console.log(item.getElementsByTagName('atom:summary')[0].textContent)
-                console.log(item.getElementsByTagName('media:thumbnail')[0].getAttribute('url'))
-                console.log(link)
-                console.log(description)
-                console.log(pubDate)
+		fetch(rssFeedURL)
+			.then(response => response.json())
+			.then(data => {
+				const items = data.items;
+				let html = '';
 
-                //const link = item.querySelector('link').textContent;
-                //const description = item.querySelector('description').textContent;
-                
-                html += '<div class="col-lg-4 mb-5"> <div class="position-relative mb-4 d-flex align-items-center">';
-       
-                html += '<img class="img-fluid rounded mr-3" src="'+thumbnail+'"><h6 class="font-weight-bold text-primary"> <a href="'+link+'">'+title+'</a></h6></div>';
-                html += '<small>Published on: '+ new Date(pubDate).toDateString() +'</small><br>';
-                html += description;
-                html += '<br><a class="btn btn-sm btn-outline-primary py-2 mt-2" href="'+link+'">Read More</a>';
-                html += '</div>';
-            });
-            
-            
-            feedContainer.innerHTML = html;
-        }
-        
-        function fetchRSSFeed() {
-            const rssFeedURL = 'https://phviro.blogspot.com/feeds/posts/default?alt=rss';
-            
-            fetch(corsProxyURL + encodeURIComponent(rssFeedURL))
-                .then(response => response.text())
-                .then(data => {
-                    const parser = new DOMParser();
-                    const feed = parser.parseFromString(data, 'application/xml');
-                    displayRSSFeed(feed);
-                })
-                .catch(error => console.error('Error:', error));
-        }
-        
-        // Fetch and display the RSS feed when the page loads
-        window.addEventListener('load', fetchRSSFeed);
+				items.slice(0, 10).forEach(item => {
+				const largeThumbnail = item.thumbnail.replace(/s72(-c)?/, 's640');
+
+				html += `<div class="col-lg-4 mb-5">
+							<div class="position-relative mb-4">
+							<div class="thumbnail-wrapper">
+								<img class="img-fluid rounded w-100" src="${largeThumbnail}" alt="${item.title} Thumbnail">
+								</div>
+							</div>
+							<h6 class="font-weight-bold text-primary"><a href="${item.link}" target="_blank">${item.title}</a></h6>
+							<small>Published on: ${new Date(item.pubDate).toDateString()}</small><br>
+							<p>${item.description.slice(0, 100)}...</p>
+							<a class="btn btn-sm btn-outline-primary py-2 mt-2" href="${item.link}" target="_blank">Read More</a>
+						</div>`;
+			});
+
+
+				document.getElementById('rss-feed').innerHTML = html;
+			})
+			.catch(error => console.error('Error loading feed:', error));
+
     </script>
 </body>
 
