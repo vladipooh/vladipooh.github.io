@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Phuwadol Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta
+    content="Phuwadol Viroonluecha, ภูวดล วิิรุฬห์ลือชา, Data Scientist, data analyst, business intelligence engineer"
+    name="keywords">
+  <meta content="Phuwadol Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา - Data Scientist" name="description">
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+  <!-- Navbar Start -->
+  <nav
+    class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5 justify-content-start">
+    <a href="index.html" class="navbar-brand ml-lg-3">
+      <h1 class="m-0 display-5"><span class="text-primary">Phuwadol</span> Viroonluecha</h1>
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
+      <div class="navbar-nav m-auto py-0" id="menujs">
+
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Content Start -->
+
+
+  <div class="container-fluid py-5">
+    <div class="container">
+      <div class="position-relative d-flex align-items-center justify-content-center">
+        <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Dashboard</h1>
+        <h1 class="position-absolute text-uppercase text-primary">Olist E-Commerce Analytics & Forecasting</h1>
+      </div>
+
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <div class="section w-75">
+          <img class="img-fluid w-100 rounded" src="img/project/olist.png" alt="olistcover">
+
+          <h2 class="mb-3 mt-5">Overview:</h2>
+          <p>
+            This project uses the Olist E-commerce dataset – a rich collection of real transactional data from a
+            Brazilian online marketplace. The dataset covers multiple dimensions of the business including customer
+            orders, product categories, seller locations, customer reviews, delivery timelines, payments, and
+            geolocation data.
+            <br>
+            <strong>Project Objective:</strong>
+            To derive actionable insights and develop predictive models to support strategic decision-making for
+            marketplace optimization.
+          </p>
+          <h2 class="mb-3 mt-5">What We Aim to Achieve:</h2>
+          <ul>
+            <li><strong>🔍 Understand customer behavior</strong>: Analyze purchase patterns, review ratings, and
+              delivery satisfaction.
+
+            <li><strong>🗺️ Explore geographical trends</strong>: Visualize buyer–seller distribution and logistics
+              across Brazil.
+
+            <li><strong>📦 Evaluate product and category performance</strong>: Identify high-performing categories and
+              delivery bottlenecks.
+
+            <li><strong>🧠 Apply machine learning</strong>: Segment customers using clustering techniques and forecast
+              future sales using
+              time series models.
+
+            <li><strong>📈 Visualize findings</strong>: Build interactive dashboards for stakeholders to monitor
+              performance, satisfaction,
+              and forecasts.
+          </ul>
+        </div>
+
+        <div class="section w-75">
+          <h2 class="mb-3 mt-5">Purpose:</h2>
+          <p>
+            The ultimate goal is to simulate the role of a data analyst or data scientist working for a large online
+            retail platform—delivering clear, data-driven business insights and supporting operational and strategic
+            planning.
+          </p>
+        </div>
+
+        <div class="section w-75">
+          <h2 class="mb-3 mt-5">📦 Dataset Overview: Olist Brazilian E-commerce</h2>
+          <p>
+            This project utilizes the <strong>Olist Brazilian E-commerce Public Dataset</strong>, a real-world dataset
+            collected from an online marketplace platform called <em>Olist</em>. The platform connects small and medium
+            businesses to customers across Brazil.
+          </p>
+          <p>
+            Originally released on <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce"
+              target="_blank">Kaggle</a>, this dataset enables a wide range of analytics and machine learning
+            applications related to order processing, customer satisfaction, logistics, and seller performance.
+          </p>
+
+          <h2 class="mt-4">🧩 Key Files:</h2>
+          <ul>
+            <li><strong>orders.csv</strong>: Core order information including order dates, customer IDs, and order
+              status.</li>
+            <li><strong>order_items.csv</strong>: Item-level details such as prices, freight charges, and product IDs.
+            </li>
+            <li><strong>products.csv</strong>: Metadata like product category, weight, and dimensions.</li>
+            <li><strong>order_reviews.csv</strong>: Star ratings (1–5) and customer review comments.</li>
+            <li><strong>customers.csv</strong>: Customer locations and IDs.</li>
+            <li><strong>sellers.csv</strong>: Seller location data (city/state) and IDs.</li>
+            <li><strong>geolocation.csv</strong>: ZIP code to GPS coordinates for mapping logistics.</li>
+            <li><strong>order_payments.csv</strong>: Payment methods and installment details.</li>
+          </ul>
+
+          <h2 class="mt-4">📍 Dataset Scope:</h2>
+          <ul>
+            <li><strong>Time Period:</strong> January 2016 – August 2018</li>
+            <li><strong>Region:</strong> Nationwide coverage in Brazil</li>
+            <li><strong>Language:</strong> Originally in Portuguese, with translated and cleaned metadata provided</li>
+          </ul>
+
+          <h2 class="mt-4">🔍 Use Cases:</h2>
+          <ul>
+            <li>E-commerce funnel analysis (from order placement to delivery)</li>
+            <li>Customer satisfaction tracking through reviews</li>
+            <li>Seller performance metrics and logistics trends</li>
+            <li>Geospatial analysis of delivery coverage</li>
+            <li>Payment method breakdowns and customer segmentation</li>
+          </ul>
+        </div>
+
+        <div class="section w-75 mx-auto">
+          <hr
+            style="border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+
+          <h2 class="mb-3 mt-5">🧪 Unified Olist Dataset: Merging 9 Data Sources into a Single DataFrame</h2>
+
+          <p>
+            To enable rich analytics on customer experience, product performance, logistics, and geography,
+            we <strong>merged all 9 raw datasets</strong> into a unified DataFrame using <code>pandas</code> in Python.
+            This created a highly enriched dataset capturing information from product category to seller location.
+          </p>
+
+          <ul>
+            <li><strong>olist_orders_dataset.csv</strong>: Base table containing <code>order_id</code>,
+              <code>customer_id</code>, and timestamps
+            </li>
+            <li><strong>olist_customers_dataset.csv</strong>: Joined on <code>customer_id</code> to add
+              <code>customer_city</code> and <code>customer_state</code>
+            </li>
+            <li><strong>olist_order_reviews_dataset.csv</strong>: Joined on <code>order_id</code> to bring in
+              <code>review_score</code> and <code>comments</code>
+            </li>
+            <li><strong>olist_geolocation_dataset.csv</strong>: Aggregated by ZIP prefix to approximate
+              <code>lat/lng</code> for city-state mapping
+            </li>
+            <li><strong>olist_order_items_dataset.csv</strong>: Merged on <code>order_id</code> to connect to
+              <code>product_id</code> and <code>seller_id</code>
+            </li>
+            <li><strong>olist_products_dataset.csv</strong>: Merged on <code>product_id</code> for <code>category</code>
+              and physical attributes</li>
+            <li><strong>product_category_name_translation.csv</strong>: Used to translate
+              <code>product_category_name</code> from Portuguese to English
+            </li>
+            <li><strong>olist_sellers_dataset.csv</strong>: Joined on <code>seller_id</code> to map seller location</li>
+            <li><strong>olist_order_payments_dataset.csv</strong>: Added to provide payment method and installment
+              details</li>
+          </ul>
+
+          <p>
+            <strong>Final dataset size:</strong> after all merges and deduplication, the unified DataFrame contains
+            several thousand enriched orders, each with details on location, products, sellers, reviews, and payments.
+          </p>
+
+          <h2 class="mt-4">📜 Sample Python Code:</h2>
+          <pre><code class="language-python">
+import pandas as pd
+
+# Load datasets
+orders = pd.read_csv('olist_orders_dataset.csv')
+customers = pd.read_csv('olist_customers_dataset.csv')
+reviews = pd.read_csv('olist_order_reviews_dataset.csv')
+payments = pd.read_csv('olist_order_payments_dataset.csv')
+order_items = pd.read_csv('olist_order_items_dataset.csv')
+products = pd.read_csv('olist_products_dataset.csv')
+sellers = pd.read_csv('olist_sellers_dataset.csv')
+geolocation = pd.read_csv('olist_geolocation_dataset.csv')
+category_translation = pd.read_csv('product_category_name_translation.csv')
+
+# Merge customers
+df = orders.merge(customers, on='customer_id', how='left')
+
+# Merge reviews
+df = df.merge(reviews, on='order_id', how='left')
+
+# Merge payments
+df = df.merge(payments, on='order_id', how='left')
+
+# Merge order items
+df = df.merge(order_items, on='order_id', how='left')
+
+# Merge products
+df = df.merge(products, on='product_id', how='left')
+
+# Merge product category translation
+df = df.merge(category_translation, on='product_category_name', how='left')
+df['product_category_name_english'].fillna('unknown', inplace=True)
+
+# Merge sellers
+df = df.merge(sellers, on='seller_id', how='left')
+
+# Process geolocation: aggregate by zip prefix
+geolocation['zip_prefix'] = geolocation['geolocation_zip_code_prefix']
+geo_agg = geolocation.groupby('zip_prefix').agg({
+    'geolocation_lat': 'mean',
+    'geolocation_lng': 'mean'
+}).reset_index()
+
+# Extract zip prefix from customer zip code
+df['zip_prefix'] = df['customer_zip_code_prefix']
+df = df.merge(geo_agg, on='zip_prefix', how='left')
+
+# Final DataFrame is now ready
+print("Unified dataset shape:", df.shape)
+          </code></pre>
+          <h2 class="mb-3">🔄 Category Translation Handling</h2>
+          <p>
+            After merging the product dataset (<code>olist_products_dataset.csv</code>) with the translation file
+            (<code>product_category_name_translation.csv</code>),
+            we found that some Portuguese product categories did not have matching English translations.
+            These untranslated categories were grouped under the label <strong>“unknown”</strong> to preserve data
+            integrity and structure.
+          </p>
+          <p>
+            ⚠️ <strong>Note:</strong> This implies that the translation file was incomplete. Any analysis involving
+            product categories
+            (e.g., segmentation or visualizations by category) should consider this "unknown" group carefully,
+            as it may impact the accuracy of insights derived from the data.
+          </p>
+        </div>
+        <div class="section w-75">
+          <hr
+            style="  border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+          <h2 class="mb-3 mt-5">📊 Olist Sales Overview Dashboard</h2>
+          <img class="img-fluid w-100 rounded mb-4" src="img/project/olistdb1.png" alt="olist dashboard1">
+          <p>
+            This dashboard provides a high-level summary of Olist's e-commerce performance over a two-year period,
+            from <strong>September 2016 to October 2018</strong>. It is designed to help stakeholders assess business
+            growth,
+            customer satisfaction, and delivery performance across multiple dimensions.
+          </p>
+          <p>
+            🔎 <strong>Applied Filters:</strong><br>
+            All visualizations across this Tableau Story are filtered to include only orders that meet the following
+            conditions:
+          </p>
+          <ul>
+            <li><strong>Payment Types:</strong> Boleto, Credit Card, Debit Card, and Voucher</li>
+            <li><strong>Order Status:</strong> Delivered</li>
+          </ul>
+
+          <p>
+            These filters ensure that the analysis focuses solely on
+            <strong>completed transactions with valid payment methods</strong>, providing a more accurate view of
+            customer behavior and fulfillment metrics.
+          </p>
+
+          <h2 class="mb-3 mt-4">🔢 Key Performance Indicators (KPIs)</h2>
+          <ul>
+            <li><strong>Total Sales</strong>: R$ 19,881,945 – the total revenue generated from all delivered orders in
+              this timeframe.</li>
+            <li><strong>Total Orders</strong>: 96,477 – the number of completed (delivered) transactions on the
+              platform.
+            </li>
+            <li><strong>Average Review Score</strong>: 4.1 – indicating overall high customer satisfaction based on
+              post-delivery feedback.</li>
+            <li><strong>Average Delivery Time</strong>: 12.43 days – representing the average number of days it took for
+              orders to be delivered after purchase.</li>
+          </ul>
+
+          <h2 class="mb-3 mt-4">📈 Sales by Time (Left Chart)</h2>
+          <p>
+            This dual-axis chart shows two important trends:
+          </p>
+          <ul>
+            <li><strong>Bar Chart (Blue)</strong>: Represents monthly sales in Brazilian Real (R$).</li>
+            <li><strong>Line Chart (Red)</strong>: Tracks the number of orders each month.</li>
+          </ul>
+          <p>
+            Sales volume and order count gradually increased throughout 2017 and remained strong into 2018, peaking
+            around
+            late 2017.
+            This suggests significant platform growth and seasonality effects (e.g., end-of-year spikes).
+          </p>
+
+          <h2 class="mb-3 mt-4">📊 Review Score Distribution (Right Pie Chart)</h2>
+          <p>
+            This pie chart shows the proportion of customer review scores (1 to 5 stars) received after order delivery:
+          </p>
+          <ul>
+            <li>⭐ <strong>5 stars</strong>: 57.50% – Majority of customers were highly satisfied.</li>
+            <li>⭐ <strong>4 stars</strong>: 19.28%</li>
+            <li>⭐ <strong>3 stars</strong>: 8.40%</li>
+            <li>⭐ <strong>2 stars</strong>: 3.40%</li>
+            <li>⭐ <strong>1 star</strong>: 11.42% – A notable minority of dissatisfied customers, indicating room for
+              improvement.</li>
+          </ul>
+
+          <h2 class="mb-3 mt-4">🛠️ Dashboard Interactivity</h2>
+          <p>
+            The dashboard includes interactive filters for:
+          </p>
+          <ul>
+            <li><strong>Order Status</strong>: e.g., Delivered</li>
+            <li><strong>Month, Year of Order</strong>: for time-based filtering</li>
+            <li><strong>Product Category</strong>: to analyze specific industries</li>
+            <li><strong>Payment Type</strong>: for financial insights</li>
+          </ul>
+          <p>
+            These filters allow users to drill down into specific segments, enabling detailed performance analysis by
+            product type, time period, or customer behavior.
+          </p>
+
+          <p>
+            🔗 Explore the interactive Story here:
+            <a class="btn btn-sm btn-outline-primary py-2 mt-2"
+              href="https://public.tableau.com/views/Book1_17506264936700/OlistBI?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+              target="_blank">
+              View Interactive Story
+            </a>
+          </p>
+        </div>
+
+        <div class="section w-75">
+          <hr
+            style="  border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+          <h2 class="mb-3 mt-5">😊 Customer Satisfaction Analysis</h2>
+          <img class="img-fluid w-100 rounded mb-4" src="img/project/olistdb2.png" alt="olist dashboard2">
+          <p>
+            This dashboard presents a detailed view of customer satisfaction based on
+            review scores.
+            The data is filtered for <strong>delivered orders only</strong>. The goal is to evaluate how different
+            product categories perform in terms of review scores,
+            delivery times, number of orders, and sales volume.
+          </p>
+
+          <h2 class="mt-4">📊 Top and Bottom 5 Categories by Review Score</h2>
+          <p>
+            On the left, we see the <strong>top 5 product categories</strong> with the highest customer satisfaction.
+            Notably, <code>books_general_interest</code> and <code>books_imported</code> received the highest volume of
+            reviews with high ratings.
+            On the right, we see the <strong>bottom 5 categories</strong> such as <code>office_furniture</code> and
+            <code>fasion_male_clothing</code>,
+            which received a large number of low-rated reviews. These insights can guide product quality improvement and
+            supplier evaluation.
+          </p>
+
+          <h2 class="mt-4">📈 Review Score vs Delivery Days</h2>
+          <p>
+            The heatmap below shows the correlation between <strong>average review score and delivery duration</strong>.
+            It is evident that as delivery time increases, the average review score tends to decrease, especially beyond
+            the 15–20 day mark.
+            This highlights the importance of <strong>efficient logistics and prompt delivery</strong> in maintaining
+            customer satisfaction.
+          </p>
+
+          <h2 class="mt-4">📋 Summary Table</h2>
+          <p>
+            On the right, a summary table provides insights for each product category including:
+          <ul>
+            <li><strong>Average Review Score</strong></li>
+            <li><strong>Average Delivery Days</strong></li>
+            <li><strong>Number of Orders</strong></li>
+            <li><strong>Total Sales (R$)</strong></li>
+          </ul>
+          For example, <code>fashion_childrens_clothes</code> has a perfect 5.0 average review score and very short
+          delivery time (8.86 days),
+          while <code>fashion_shoes</code> shows relatively low satisfaction due to longer delivery
+          durations (15.28 days).
+          </p>
+
+          <p>
+            There is a clear link between <strong>delivery speed</strong> and
+            <strong>customer satisfaction</strong>.
+            Prioritizing faster delivery and enhancing logistics for lower-rated product categories could significantly
+            improve overall user experience.
+          </p>
+        </div>
+
+        <div class="section w-75">
+          <hr
+            style="  border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+          <h2 class="mb-3 mt-5">🌍 Sellers and Customer Distribution</h2>
+          <img class="img-fluid w-100 rounded mb-4" src="img/project/olistdb3.png" alt="olist dashboard3">
+          <p>
+            This dashboard displays the <strong>geographic distribution</strong> of both customers and sellers across
+            Brazil, based on <strong>delivered orders</strong>. The visual comparison reveals patterns in consumer
+            behavior and seller presence by state.
+          </p>
+
+          <h2 class="mt-4">🧑‍🤝‍🧑 Customer Distribution (Left Map)</h2>
+          <p>
+            Each green circle on the left map represents the number of distinct customers per Brazilian state. The
+            <strong>size of the circle</strong> reflects
+            the customer count, while the <strong>intensity of the green color</strong> indicates the <strong>total
+              payment value</strong> from that region.
+          <ul>
+            <li>The southeast region (especially São Paulo) has the highest customer concentration and spending volume.
+            </li>
+            <li>Regions such as the north and northeast show a significantly smaller number of customers and lower
+              transaction value.</li>
+          </ul>
+          This suggests a higher demand and purchasing power in more urbanized and economically developed regions.
+          </p>
+
+          <h2 class="mt-4">🏪 Seller Distribution (Right Map)</h2>
+          <p>
+            The red map on the right shows the distribution of sellers. Similar to the customer map, the <strong>circle
+              size</strong> represents the number of sellers
+            while the <strong>red color intensity</strong> shows the <strong>total product price value</strong> sold
+            from each state.
+          <ul>
+            <li>The seller distribution closely mirrors customer distribution, with a strong presence in the southeast,
+              particularly in São Paulo.</li>
+            <li>This may indicate that sellers tend to locate themselves closer to areas with higher demand to optimize
+              logistics and reduce delivery times.</li>
+          </ul>
+          </p>
+
+          <p>
+            Both customer demand and seller supply are heavily concentrated in the
+            southeastern states of Brazil.
+            This insight is crucial for logistics planning, regional marketing, and inventory allocation strategies.
+          </p>
+        </div>
+
+        <div class="section w-75">
+          <hr
+            style="  border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+          <h2 class="mb-3 mt-5">📊 Product Performance Dashboard</h2>
+          <img class="img-fluid w-100 rounded mb-4" src="img/project/olistdb4.png" alt="olist dashboard4">
+          <p>
+            This dashboard provides a comprehensive overview of <strong>product category performance</strong>.
+            It highlights key insights into sales, order volumes, pricing, and customer satisfaction through multiple
+            visualizations.
+          </p>
+
+          <h2 class="mt-4">🛍️ Sales by Category</h2>
+          <p>
+            The bar chart on the left shows the <strong>total sales revenue</strong> for the top product categories.
+          <ul>
+            <li><strong>Health & Beauty</strong> leads in sales volume, followed closely by <strong>Watches &
+                Gifts</strong> and <strong>Bed, Bath & Table</strong>.</li>
+            <li>This suggests a high consumer demand for personal care and lifestyle enhancement products.</li>
+          </ul>
+          </p>
+
+          <h2 class="mt-4">📦 Orders by Category</h2>
+          <p>
+            The chart in the center ranks categories by <strong>number of orders</strong>.
+          <ul>
+            <li><strong>Bed, Bath & Table</strong> tops the list in order count, indicating it has a high sales
+              frequency despite not being the top revenue generator.</li>
+            <li><strong>Health & Beauty</strong> also maintains strong order volume, reinforcing its high sales value.
+            </li>
+          </ul>
+          </p>
+
+          <h2 class="mt-4">📈 Sales vs. Reviews</h2>
+          <p>
+            The table on the right compares <strong>total sales</strong> (in R$) against the <strong>average customer
+              review score</strong> for each category.
+          <ul>
+            <li>Categories such as <strong>Garden Tools</strong> and <strong>Stationery</strong> show high customer
+              satisfaction (avg. score ≥ 4.2) despite lower sales.</li>
+            <li><strong>Office Furniture</strong> stands out with low review scores, signaling potential issues in
+              product or delivery quality.</li>
+          </ul>
+          </p>
+
+          <h2 class="mt-4">💰 Product Price Performance</h2>
+          <p>
+            The bottom treemap combines <strong>Portuguese and English category names</strong>, showing both
+            <strong>price magnitude</strong> and <strong>review sentiment</strong>.
+          <ul>
+            <li>Darker blue tiles indicate <strong>higher average review scores</strong>, while size represents
+              <strong>total revenue</strong>.
+            </li>
+            <li>This dual encoding helps identify high-performing categories in both financial and customer satisfaction
+              dimensions.</li>
+          </ul>
+          </p>
+
+          <p>
+            <em>Health & Beauty</em> and <em>Bed, Bath & Table</em> are high performers
+            in both revenue and order count,
+            while categories like <em>Stationery</em> and <em>Garden Tools</em> offer opportunities for growth due to
+            strong customer feedback.
+          </p>
+        </div>
+
+        <div class="section w-75">
+          <hr
+            style="  border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+          <h2 class="mb-3 mt-5">🧠 Customer Segmentation Using K-Means Clustering</h2>
+          <img class="img-fluid w-75 rounded mb-3" src="img/project/olistelbow.png" alt="elbow silhouette chart">
+          <p>
+            To understand customer purchasing behavior, we applied <strong>K-Means clustering</strong> using three
+            features:
+            <strong>total spending</strong>, <strong>number of orders</strong>, and <strong>review score</strong>. To
+            determine
+            the optimal number of clusters, we used two key metrics:
+          </p>
+          <ul>
+            <li><strong>WCSS (Within-Cluster Sum of Squares):</strong> measures compactness of clusters</li>
+            <li><strong>Silhouette Score:</strong> measures separation between clusters</li>
+          </ul>
+          <img class="img-fluid w-75 rounded mb-3" src="img/project/olistsegmentation2.png" alt="PCA scatter plot">
+          <p>
+
+            The plot above shows both metrics across k = 2 to 10. Based on the elbow point and silhouette peak,
+            <strong>k = 6</strong> was selected as optimal.
+          </p>
+
+          <h2 class="mt-4">📊 K-Means Segmentation (k = 6)</h2>
+          <img class="img-fluid w-75 rounded mb-3" src="img/project/olistkmean.png" alt="kmeans table">
+          <p>
+            After selecting <strong>k = 6</strong>, we applied K-Means to create 6 customer groups. Each cluster
+            represents
+            a distinct customer segment with unique behavior in terms of spending, frequency, and satisfaction.
+          </p>
+          <ul>
+            <li>Clusters were assigned back to customers</li>
+            <li>StandardScaler was used to normalize features before clustering</li>
+          </ul>
+
+          <h2 class="mt-4">🔍 PCA Visualization of Clusters</h2>
+          <img class="img-fluid w-75 rounded mb-3" src="img/project/olistsegmentation1.png" alt="PCA scatter plot">
+          <p>
+            To visualize clusters in 2D space, we used <strong>Principal Component Analysis (PCA)</strong>. Each point
+            represents a customer, and the color indicates their assigned cluster.
+          </p>
+          <ul>
+            <li><strong>PCA Component 1</strong> and <strong>PCA Component 2</strong> capture the most variance in the
+              data</li>
+            <li>Clear separation is observed between clusters, confirming well-defined customer groups</li>
+          </ul>
+          <p>
+            This view helps to confirm clustering quality and provides insights for business actions such as targeted
+            marketing or loyalty programs.
+          </p>
+        </div>
+
+        <div class="section w-75 mx-auto">
+          <h2 class="mb-3 mt-5">👥 Customer Segmentation Summary & Recommended Strategies</h2>
+          <p>
+            This table summarizes <strong>six customer segments</strong> based on customer behavior metrics like average
+            spend, orders, and satisfaction. Tailored engagement strategies are suggested for each segment.
+          </p>
+
+          <div class="table-responsive">
+            <table class="table table-bordered text-center align-middle" style="font-size: 0.95rem;">
+              <thead style="background-color: #FD9F9D; color: #fff;">
+                <tr>
+                  <th>Segment</th>
+                  <th># of Customers</th>
+                  <th>Avg Spend (BRL)</th>
+                  <th>Orders</th>
+                  <th>Review</th>
+                  <th>Segment Type</th>
+                  <th>Strategy Highlights</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>25,555</td>
+                  <td>R$182</td>
+                  <td>1</td>
+                  <td>3.7</td>
+                  <td>General buyer</td>
+                  <td>Send repurchase promotions, upsell</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>2,971</td>
+                  <td>R$423</td>
+                  <td>2.1</td>
+                  <td>4.11</td>
+                  <td>Loyal & high spender</td>
+                  <td>Loyalty program, early access, review incentives</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>53,173</td>
+                  <td>R$180</td>
+                  <td>1</td>
+                  <td>5</td>
+                  <td>Satisfied first-time buyer</td>
+                  <td>Follow-up email, thank-you coupon</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>13,541</td>
+                  <td>R$255</td>
+                  <td>1</td>
+                  <td>1.21</td>
+                  <td>Unhappy buyer</td>
+                  <td>Apology survey, discount, investigate issues</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>139</td>
+                  <td>R$9,241</td>
+                  <td>1.16</td>
+                  <td>3.1</td>
+                  <td>VIP with moderate satisfaction</td>
+                  <td>Personalized service, direct feedback</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>1</td>
+                  <td>R$109,312.64</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>High-value dissatisfied outlier</td>
+                  <td>Direct contact, investigate shipment, personalized recovery offer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="mt-4">
+            These segments support data-driven personalization, ensuring strategic alignment with customer satisfaction
+            and value.
+          </p>
+        </div>
+
+        <div class="section w-75 mx-auto">
+
+          <hr
+            style="  border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+          <h2 class="mb-3 mt-5">Business Case Exploration: Framing the Right Questions</h2>
+
+          <p>
+            The following five business questions were carefully selected to reflect key areas where data can drive
+            actionable insights and business value. Each question targets a distinct dimension of performance—ranging
+            from product optimization and customer satisfaction to operational efficiency and strategic growth.
+          </p>
+
+          <p>
+            The goal is to demonstrate how data analytics can support evidence-based decision-making, reveal hidden
+            opportunities, and address real-world challenges in a business context.
+          </p>
+
+          <p>
+            These questions not only highlight core metrics that matter to stakeholders but also showcase how thoughtful
+            data exploration can lead to measurable improvements across departments.
+          </p>
+
+          <h2 class="mb-3 mt-5">📦 Business Question 1: Underserved States in Seller Availability</h2>
+
+          <p>
+            <strong>Which states are underserved in terms of seller availability?</strong><br> This question addresses
+            geographical gaps in marketplace access, focusing on areas with demand but limited or no seller presence.
+          </p>
+          <img class="img-fluid w-50 rounded" src="img/project/q1map.png"
+            alt="underserved in terms of seller availability map">
+          <h2 class="mt-4">🗺️ Two Types of Underserved States</h2>
+          <ul>
+            <li><strong>States with demand but extremely few sellers</strong>:
+              <ul>
+                <li>Maranhão (MA)</li>
+                <li>Pernambuco (PE)</li>
+                <li>Mato Grosso (MT)</li>
+              </ul>
+            </li>
+            <li><strong>States with demand but no local sellers at all</strong>:
+              <ul>
+                <li>Alagoas (AL) – 413 orders, 0 sellers</li>
+                <li>Amapá (AP) – 68 orders, 0 sellers</li>
+                <li>Roraima (RR) – 46 orders, 0 sellers</li>
+                <li>Tocantins (TO) – 280 orders, 0 sellers</li>
+              </ul>
+            </li>
+          </ul>
+
+          <p class="mt-3">
+            This reveals a broader issue of <strong>inequity in seller access</strong>, especially in North and
+            Northeast Brazil.
+            These areas may benefit from:
+          </p>
+
+          <ul>
+            <li>Targeted seller recruitment programs</li>
+            <li>Improved logistics infrastructure</li>
+            <li>Incentives to support local economic inclusion</li>
+          </ul>
+        </div>
+
+        <div class="section w-75 mx-auto">
+          <hr
+            style="border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+
+          <h2 class="mb-3 mt-5">⭐ Business Question 2: Review Quality in Low-Sales States</h2>
+
+          <p>
+            <strong>How good are seller reviews in low-sales states compared to larger ones?</strong><br>
+            This question explores whether states with fewer sales are also performing poorly in terms of customer
+            satisfaction. Surprisingly, the data reveals the opposite trend.
+          </p>
+
+          <p>
+            Several <strong>low-sales states</strong> demonstrate <strong>exceptionally high review scores</strong>,
+            often outperforming large markets. This suggests that seller performance in these regions is strong, but
+            their visibility or access to customers might be limited.
+          </p>
+
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered text-center">
+              <thead style="background-color: #FD9F9D; color: #fff;">
+                <tr>
+                  <th>State</th>
+                  <th>Market Size</th>
+                  <th>Total Sales (BRL)</th>
+                  <th>Avg Review Score</th>
+                  <th>Orders</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>MS</strong></td>
+                  <td>Small</td>
+                  <td>R$10,826</td>
+                  <td>⭐ 4.56</td>
+                  <td>49</td>
+                </tr>
+                <tr>
+                  <td><strong>PA</strong></td>
+                  <td>Small</td>
+                  <td>R$1,393</td>
+                  <td>⭐ 4.50</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td><strong>RN</strong></td>
+                  <td>Small</td>
+                  <td>R$4,064</td>
+                  <td>⭐ 4.47</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td><strong>SE</strong></td>
+                  <td>Small</td>
+                  <td>R$7,630</td>
+                  <td>⭐ 4.46</td>
+                  <td>40</td>
+                </tr>
+                <tr>
+                  <td><strong>RR</strong></td>
+                  <td>Small</td>
+                  <td>R$998</td>
+                  <td>⭐ 4.38</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td><strong>MA</strong></td>
+                  <td>Small</td>
+                  <td>R$3,961</td>
+                  <td>⭐ 4.33</td>
+                  <td>28</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="mt-3">
+            These findings highlight a <strong>key business opportunity</strong>: regions like MS, PA, and RN have both
+            high customer satisfaction and low sales. This may point to an <strong>underutilization of quality
+              sellers</strong> due to factors such as poor infrastructure, lack of marketing, or limited delivery
+            coverage.
+          </p>
+
+          <p>
+            <strong>Strategic Implication:</strong> Investing in <u>logistics improvements</u>, <u>targeted
+              marketing</u>, and <u>seller onboarding initiatives</u> in these states could help unlock growth potential
+            and improve regional equity in the platform’s seller ecosystem.
+          </p>
+        </div>
+
+        <div class="section w-75 mx-auto">
+          <hr
+            style="border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+
+          <h2 class="mb-3 mt-5">💰 Business Question 3: High Sales per Order by Seller</h2>
+
+          <p>
+            <strong>Which sellers generate the highest sales per single order?</strong><br>
+            The goal here is to identify sellers with the highest revenue per transaction, revealing opportunities for
+            maximizing revenue efficiency.
+          </p>
+
+          <p>
+            Top high-value sellers tend to operate in <strong>specialized or high-ticket product categories</strong>,
+            such as Fixed Telephony, Garden Tools, and Computers. These sellers demonstrate the potential for
+            significant revenue with just a few orders.
+          </p>
+
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered text-center">
+              <thead style="background-color: #FD9F9D; color: #fff;">
+                <tr>
+                  <th>Seller ID</th>
+                  <th>Sales per Order (BRL)</th>
+                  <th>Orders</th>
+                  <th>Product Category</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>*2d5b2</td>
+                  <td>R$36,329.76</td>
+                  <td>4</td>
+                  <td>Fixed Telephony</td>
+                </tr>
+                <tr>
+                  <td>*ebbf5</td>
+                  <td>R$11,745.00</td>
+                  <td>1</td>
+                  <td>Garden Tools</td>
+                </tr>
+                <tr>
+                  <td>*84849</td>
+                  <td>R$10,259.61</td>
+                  <td>3</td>
+                  <td>Drinks</td>
+                </tr>
+                <tr>
+                  <td>*90f66</td>
+                  <td>R$7,719.12</td>
+                  <td>2</td>
+                  <td>Auto</td>
+                </tr>
+                <tr>
+                  <td>*4a1e2</td>
+                  <td>R$6,922.21</td>
+                  <td>1</td>
+                  <td>Computers</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="mt-3">
+            These sellers operate in categories that naturally have <strong>higher average basket values</strong>.
+            Despite handling fewer orders, they achieve substantial revenue due to their product type.
+          </p>
+
+          <p>
+            <strong>Strategic Implication:</strong> Support these high-value sellers with <u>targeted promotion</u>,
+            <u>premium shipping options</u>, and <u>platform incentives</u> to enhance visibility and drive conversions.
+            This could help <strong>maximize revenue per transaction</strong> while improving customer experience in
+            niche categories.
+          </p>
+        </div>
+
+        <div class="section w-75 mx-auto">
+          <hr
+            style="border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+
+          <h2 class="mb-3 mt-5">🧾 Business Question 4: Customer Satisfaction — New vs. Returning</h2>
+
+          <p>
+            <strong>Do new customers rate differently from returning ones?</strong><br>
+            The data reveals an interesting contrast between <strong>new</strong> and <strong>returning
+              customers</strong>:
+          </p>
+
+          <ul>
+            <li>Returning customers give <strong>slightly higher average review scores</strong> (4.06 vs 4.01)</li>
+            <li>New customers <strong>spend slightly more per order</strong> (R$173.18 vs R$167.06)</li>
+            <li>Despite spending more, new customers are <strong>less satisfied</strong> overall</li>
+          </ul>
+
+          <p>
+            This highlights the need to <strong>invest in improving the first-purchase experience</strong>. By
+            optimizing onboarding, product education, and post-sale support, we can increase satisfaction among new
+            customers and <strong>boost their likelihood of becoming loyal repeat buyers</strong>.
+          </p>
+        </div>
+
+        <div class="section w-75 mx-auto">
+          <hr
+            style="border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+
+          <h2 class="mb-3 mt-5">📚 Business Question 5: Best-Reviewed but Low-Selling Categories</h2>
+
+          <p>
+            <strong>Which product categories have the best reviews but low sales?</strong><br>
+            These products are <strong>loved by customers</strong> (avg. review score > 4.3), but generate
+            <strong>relatively low sales</strong>. Notably, categories like <strong>imported books</strong> and
+            <strong>construction tools</strong> stand out as examples.
+          </p>
+
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered text-center">
+              <thead style="background-color: #FD9F9D; color: #fff;">
+                <tr>
+                  <th>Product Category</th>
+                  <th>Avg. Review</th>
+                  <th>Total Sales (BRL)</th>
+                  <th># of Reviews</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Books – General</td>
+                  <td>⭐ 4.44</td>
+                  <td>R$64,695</td>
+                  <td>561</td>
+                </tr>
+                <tr>
+                  <td>Books – Imported</td>
+                  <td>⭐ 4.42</td>
+                  <td>R$6,702</td>
+                  <td>62</td>
+                </tr>
+                <tr>
+                  <td>Construction Tools</td>
+                  <td>⭐ 4.42</td>
+                  <td>R$21,069</td>
+                  <td>101</td>
+                </tr>
+                <tr>
+                  <td>Books – Technical</td>
+                  <td>⭐ 4.38</td>
+                  <td>R$24,993</td>
+                  <td>269</td>
+                </tr>
+                <tr>
+                  <td>Food & Drink</td>
+                  <td>⭐ 4.32</td>
+                  <td>R$27,474</td>
+                  <td>290</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            These high-rated yet underperforming categories represent <strong class="text-primary">“hidden
+              gems”</strong> that could benefit from better promotion, improved visibility, or inclusion in targeted
+            campaigns to unlock their full potential.
+          </p>
+        </div>
+
+        <div class="section w-75 mx-auto">
+          <hr
+            style="border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+          <h2 class="mb-3 mt-5">📈 Sales Predictions – 6-Month Forecast</h2>
+
+          <p>
+            To anticipate future demand and guide strategic planning, we implemented a 6-month sales forecast using
+            <strong>Facebook Prophet</strong> — a time series forecasting library developed by Meta. It is widely used
+            in business analytics because of its ease of use, ability to handle holidays and trend changes, and
+            suitability for daily data.
+          </p>
+
+          <img class="img-fluid w-75 rounded my-3" src="img/project/olistforecastcode1.png"
+            alt="Prophet holiday setup code">
+          <img class="img-fluid w-75 rounded my-3" src="img/project/olistforecastcode2.png" alt="Prophet forecast loop">
+
+          <h2 class="mt-4">🔧 Methodology Overview</h2>
+          <ul>
+            <li><strong>Tool Used:</strong> Facebook Prophet (Python)</li>
+            <li><strong>Forecast Horizon:</strong> 180 days (≈ 6 months)</li>
+            <li><strong>Target:</strong> Top 5 product categories by total sales</li>
+            <li><strong>Data Fields:</strong> <code>ds</code> = date, <code>y</code> = daily total sales per category
+            </li>
+            <li><strong>Seasonality:</strong> Enabled <code>weekly</code> and <code>yearly</code> patterns</li>
+            <li><strong>Holiday Effects:</strong> Incorporated major Brazilian holidays (e.g., Black Friday, Christmas,
+              Carnival)</li>
+            <li><strong>Seasonality Mode:</strong> Set to <code>'additive'</code> to capture linear trends</li>
+          </ul>
+
+          <h2 class="mt-4">📌 Key Steps</h2>
+          <ol>
+            <li>Parsed the original dataset and ensured the date column (<code>ds</code>) was in datetime format.</li>
+            <li>Selected the top 5 categories based on total sales volume.</li>
+            <li>Generated a holiday calendar to capture spikes or drops due to special events.</li>
+            <li>Trained one Prophet model per product category using daily aggregated data.</li>
+            <li>Generated 6-month forecasts and visualized daily projections.</li>
+          </ol>
+
+          <p>
+            These forecasts enable better <strong>inventory planning</strong>, <strong>budget allocation</strong>, and
+            <strong>marketing scheduling</strong>. By identifying expected highs and lows in demand per category,
+            stakeholders can proactively optimize supply chains, promotions, and resource deployment.
+          </p>
+        </div>
+
+        <div class="section w-75 mx-auto">
+          <hr
+            style="border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+
+          <h2 class="mb-3 mt-5">📈 Sales Forecast by Category: Insights & Strategic Recommendations</h2>
+
+          <p>
+            This forecast analysis covers five major product categories and was designed to help stakeholders identify
+            demand trends, seasonality, and sales volatility. Each forecast includes visual predictions with confidence
+            intervals, paired with tailored marketing and operational suggestions to capitalize on business
+            opportunities.
+          </p>
+
+          <h2 class="mb-3 mt-5">🛏️ Bed Bath Table</h2>
+          <img class="img-fluid w-75 rounded mb-2" src="img/project/olistbedforecast.png" alt="Forecast - Bed Bath Table">
+
+          <p>
+            The sales forecast for the Bed Bath Table category reveals a recurring seasonal trend, with strong peaks
+            around Q4—likely linked to major events like Black Friday and year-end holidays. While base demand remains
+            steady, significant short-term increases are evident.
+          </p>
+          <ul>
+            <li><strong>Recommended Actions:</strong> Plan seasonal promotions in Q4, bundle slow-moving items with
+              popular ones, and prepare inventory ahead of peak demand.</li>
+            <li><strong>Marketing Focus:</strong> Retarget existing customers with promotional discounts and home
+              comfort-focused campaigns during the fall/winter period.</li>
+          </ul>
+
+          <h2 class="mb-3 mt-5">🪑Furniture Decor</h2>
+          <img class="img-fluid w-75 rounded mb-2" src="img/project/olistfurnitureforecast.png"
+            alt="Forecast - Furniture Decor">
+          <p>
+            The Furniture Decor category shows stable demand with moderate fluctuations. No extreme peaks, but a slight
+            growth trend suggests consistent consumer interest in home improvement products.
+          </p>
+          <ul>
+            <li><strong>Recommended Actions:</strong> Maintain regular marketing throughout the year and align with home
+              renovation seasons (spring/summer).</li>
+            <li><strong>Marketing Focus:</strong> Emphasize aesthetics, sustainability, or ergonomic design in
+              campaigns. Consider influencer content on interior decor.</li>
+          </ul>
+
+          <h2 class="mb-3 mt-5">Watches & Gifts</h2>
+          <img class="img-fluid w-75 rounded mb-2" src="img/project/olistgiftforecast.png" alt="Forecast - Gifts">
+          <p>
+            This category displays strong seasonal spikes, especially toward the end of the year. Demand patterns
+            reflect major gifting holidays such as Christmas and New Year.
+          </p>
+          <ul>
+            <li><strong>Recommended Actions:</strong> Build stock early in Q4, create gifting bundles, and offer express
+              delivery services.</li>
+            <li><strong>Marketing Focus:</strong> Launch emotional storytelling campaigns and gift guides starting in
+              early November. Use countdowns and urgency messaging.</li>
+          </ul>
+
+          <h2 class="mb-3 mt-5">💊 Health & Beauty</h2>
+          <img class="img-fluid w-75 rounded mb-2" src="img/project/olisthealthforecast.png" alt="Forecast - Health Beauty">
+          <p>
+            Sales in this category are stable with minor positive trends. No strong seasonal effects were observed,
+            indicating a steady market.
+          </p>
+          <ul>
+            <li><strong>Recommended Actions:</strong> Focus on customer loyalty programs and subscriptions to drive
+              repeat purchases.</li>
+            <li><strong>Marketing Focus:</strong> Highlight long-term self-care, skincare routines, and wellness tips
+              year-round. Utilize content marketing.</li>
+          </ul>
+
+          <h2 class="mb-3 mt-5">💻 Computers Accessories</h2>
+          <img class="img-fluid w-75 rounded mb-2" src="img/project/olistcomputerforecast.png"
+            alt="Forecast - Computers Accessories">
+          <p>
+            This category shows cyclical behavior with demand surges likely related to back-to-school seasons and
+            year-end promotions. Volatility suggests sensitivity to external events or promotions.
+          </p>
+          <ul>
+            <li><strong>Recommended Actions:</strong> Align campaigns with academic calendars and tech events. Monitor
+              competitors for pricing strategy.</li>
+            <li><strong>Marketing Focus:</strong> Emphasize performance, deals, and student/work-from-home readiness.
+              Use comparison and tutorial content.</li>
+          </ul>
+        </div>
+
+        <div class="section w-75 mx-auto">
+          <hr
+            style="border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
+
+          <h2 class="mb-3 mt-5">📌 Project Summary: Unlocking Insights from Olist E-commerce Data</h2>
+
+          <p>
+            This end-to-end project explores Brazil’s largest online marketplace—<strong>Olist</strong>—by integrating
+            data engineering, business analysis, and machine learning to extract valuable business insights and make
+            data-driven recommendations.
+          </p>
+
+          <ul>
+            <li><strong>🔗 Unified Dataset:</strong> Multiple raw datasets were merged and cleaned to create a
+              comprehensive, behavior-rich customer dataset.</li>
+            <li><strong>📊 Exploratory Dashboards:</strong> Visualized sales, customer demographics, product categories,
+              and review quality across Brazilian regions using Power BI.</li>
+            <li><strong>📍 Regional Insights:</strong> Identified underserved states with demand but few or no sellers,
+              highlighting logistics and equity gaps.</li>
+            <li><strong>🤖 Customer Segmentation:</strong> Applied K-Means clustering on behavioral features (spending,
+              order count, reviews) to identify 6 distinct customer groups.</li>
+            <li><strong>🔮 Forecasting:</strong> Used Facebook Prophet to predict future sales trends for top 5 product
+              categories, uncovering seasonal patterns and growth opportunities.</li>
+          </ul>
+
+          <p>
+            <strong>🔍 Business Questions Answered:</strong>
+          </p>
+          <ol>
+            <li>Which Brazilian states are underserved in terms of seller access?</li>
+            <li>How does review quality compare in low-sales vs. high-sales regions?</li>
+            <li>Which product categories are best-rated but low-selling?</li>
+            <li>How can we segment customers for better marketing strategies?</li>
+            <li>What are the sales trends and future demand for top product categories?</li>
+          </ol>
+
+          <p>
+            Through a combination of visual storytelling, machine learning, and business-focused insights, this project
+            demonstrates the potential of <strong>data-driven decision making</strong> in a competitive e-commerce
+            landscape.
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+
+
+  <!-- Footer Start -->
+  <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5" id="footerr">
+  </div>
+  <!-- Footer End -->
+
+  <!-- Scroll to Bottom -->
+  <i class="fa fa-2x fa-angle-down text-secondary scroll-to-bottom"></i>
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/typed/typed.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+  <!-- Contact Javascript File -->
+  <script src="mail/jqBootstrapValidation.min.js"></script>
+  <script src="mail/contact.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/footer.js"></script>
+  <script>appendContentToFooter();</script>
+
+</body>
+
+</html>

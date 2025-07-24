@@ -28,7 +28,7 @@ function appendContentToFooter() {
 
     const copyrightText = document.createElement("p");
     copyrightText.className = "m-0";
-    copyrightText.innerHTML = "&copy; 2024 <a class='text-white font-weight-bold' href='#'>Phuwadol Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา</a>";
+    copyrightText.innerHTML = "&copy; 2025 <a class='text-white font-weight-bold' href='#'>Phuwadol Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา</a>";
 
     container.appendChild(socialMediaContainer);
     container.appendChild(copyrightText);
