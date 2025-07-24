@@ -188,57 +188,9 @@
             several thousand enriched orders, each with details on location, products, sellers, reviews, and payments.
           </p>
 
-          <h2 class="mt-4">📜 Sample Python Code:</h2>
-          <pre><code class="language-python">
-import pandas as pd
+          <h3 class="mt-4">📜 Sample Python Code:</h3>
+          <img class="img-fluid w-75 rounded mb-4" src="img/project/olistmergecode.png" alt="Olist Merge Code">
 
-# Load datasets
-orders = pd.read_csv('olist_orders_dataset.csv')
-customers = pd.read_csv('olist_customers_dataset.csv')
-reviews = pd.read_csv('olist_order_reviews_dataset.csv')
-payments = pd.read_csv('olist_order_payments_dataset.csv')
-order_items = pd.read_csv('olist_order_items_dataset.csv')
-products = pd.read_csv('olist_products_dataset.csv')
-sellers = pd.read_csv('olist_sellers_dataset.csv')
-geolocation = pd.read_csv('olist_geolocation_dataset.csv')
-category_translation = pd.read_csv('product_category_name_translation.csv')
-
-# Merge customers
-df = orders.merge(customers, on='customer_id', how='left')
-
-# Merge reviews
-df = df.merge(reviews, on='order_id', how='left')
-
-# Merge payments
-df = df.merge(payments, on='order_id', how='left')
-
-# Merge order items
-df = df.merge(order_items, on='order_id', how='left')
-
-# Merge products
-df = df.merge(products, on='product_id', how='left')
-
-# Merge product category translation
-df = df.merge(category_translation, on='product_category_name', how='left')
-df['product_category_name_english'].fillna('unknown', inplace=True)
-
-# Merge sellers
-df = df.merge(sellers, on='seller_id', how='left')
-
-# Process geolocation: aggregate by zip prefix
-geolocation['zip_prefix'] = geolocation['geolocation_zip_code_prefix']
-geo_agg = geolocation.groupby('zip_prefix').agg({
-    'geolocation_lat': 'mean',
-    'geolocation_lng': 'mean'
-}).reset_index()
-
-# Extract zip prefix from customer zip code
-df['zip_prefix'] = df['customer_zip_code_prefix']
-df = df.merge(geo_agg, on='zip_prefix', how='left')
-
-# Final DataFrame is now ready
-print("Unified dataset shape:", df.shape)
-          </code></pre>
           <h2 class="mb-3">🔄 Category Translation Handling</h2>
           <p>
             After merging the product dataset (<code>olist_products_dataset.csv</code>) with the translation file
@@ -519,7 +471,7 @@ print("Unified dataset shape:", df.shape)
           <hr
             style="  border: none; height: 2px; background: linear-gradient(to right, #6c757d, #dee2e6); margin: 40px 0;">
           <h2 class="mb-3 mt-5">🧠 Customer Segmentation Using K-Means Clustering</h2>
-          <img class="img-fluid w-75 rounded mb-3" src="img/project/olistelbow.png" alt="elbow silhouette chart">
+          
           <p>
             To understand customer purchasing behavior, we applied <strong>K-Means clustering</strong> using three
             features:
@@ -531,15 +483,16 @@ print("Unified dataset shape:", df.shape)
             <li><strong>WCSS (Within-Cluster Sum of Squares):</strong> measures compactness of clusters</li>
             <li><strong>Silhouette Score:</strong> measures separation between clusters</li>
           </ul>
-          <img class="img-fluid w-75 rounded mb-3" src="img/project/olistsegmentation2.png" alt="PCA scatter plot">
+          <img class="img-fluid w-75 rounded mb-3" src="img/project/olistsegmentation2.png" alt="elbow silhouette plot">
           <p>
 
             The plot above shows both metrics across k = 2 to 10. Based on the elbow point and silhouette peak,
             <strong>k = 6</strong> was selected as optimal.
           </p>
+          <h3 class="mt-4">📜 Sample Python Code:</h3>
+          <img class="img-fluid w-75 rounded mb-3" src="img/project/olistwcsssilcode.png" alt="elbow silhouette code">
 
           <h2 class="mt-4">📊 K-Means Segmentation (k = 6)</h2>
-          <img class="img-fluid w-75 rounded mb-3" src="img/project/olistkmean.png" alt="kmeans table">
           <p>
             After selecting <strong>k = 6</strong>, we applied K-Means to create 6 customer groups. Each cluster
             represents
@@ -565,6 +518,8 @@ print("Unified dataset shape:", df.shape)
             This view helps to confirm clustering quality and provides insights for business actions such as targeted
             marketing or loyalty programs.
           </p>
+          <h3 class="mt-4">📜 Sample Python Code:</h3>
+          <img class="img-fluid w-75 rounded mb-3" src="img/project/olistkmeanpcacode.png" alt="kmeans with pca graph python code">
         </div>
 
         <div class="section w-75 mx-auto">
@@ -982,9 +937,8 @@ print("Unified dataset shape:", df.shape)
             suitability for daily data.
           </p>
 
-          <img class="img-fluid w-75 rounded my-3" src="img/project/olistforecastcode1.png"
-            alt="Prophet holiday setup code">
-          <img class="img-fluid w-75 rounded my-3" src="img/project/olistforecastcode2.png" alt="Prophet forecast loop">
+          <img class="img-fluid w-75 rounded my-3" src="img/project/olist6monthforecastcode.png"
+            alt="Prophet Forecast code">
 
           <h2 class="mt-4">🔧 Methodology Overview</h2>
           <ul>
@@ -1057,7 +1011,7 @@ print("Unified dataset shape:", df.shape)
               campaigns. Consider influencer content on interior decor.</li>
           </ul>
 
-          <h2 class="mb-3 mt-5">Watches & Gifts</h2>
+          <h2 class="mb-3 mt-5">🎁 Watches & Gifts</h2>
           <img class="img-fluid w-75 rounded mb-2" src="img/project/olistgiftforecast.png" alt="Forecast - Gifts">
           <p>
             This category displays strong seasonal spikes, especially toward the end of the year. Demand patterns
@@ -1070,7 +1024,7 @@ print("Unified dataset shape:", df.shape)
               early November. Use countdowns and urgency messaging.</li>
           </ul>
 
-          <h2 class="mb-3 mt-5">💊 Health & Beauty</h2>
+          <h2 class="mb-3 mt-5">🧼 Health & Beauty</h2>
           <img class="img-fluid w-75 rounded mb-2" src="img/project/olisthealthforecast.png" alt="Forecast - Health Beauty">
           <p>
             Sales in this category are stable with minor positive trends. No strong seasonal effects were observed,
