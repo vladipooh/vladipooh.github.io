@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>PHUWADOL "PAUL" VIROONLUECHA'S Career Journey</title>
+    <style>
+        :root {
+            --navy: #0b2340;
+            --blue: #146ba0;
+            --teal: #199b93;
+            --gold: #eeb230;
+            --mist: #eef6fa;
+            --ink: #172631
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory
+        }
+
+        body {
+            margin: 0;
+            background: var(--mist);
+            font-family: Inter, Aptos, "Noto Sans Thai", system-ui, sans-serif;
+            color: var(--ink)
+        }
+
+        .topbar {
+            height: 68px;
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 0 5vw;
+            background: #0b2340ee;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 18px #0003
+        }
+
+        .brand {
+            margin-right: auto;
+            color: #fff;
+            text-decoration: none;
+            font-size: .76rem;
+            font-weight: 900;
+            letter-spacing: .1em
+        }
+
+        .nav {
+            display: flex;
+            gap: 8px
+        }
+
+        .nav a {
+            padding: 9px 12px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            color: #d8eaf3;
+            text-decoration: none;
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: .04em
+        }
+
+        .nav a:hover {
+            border-color: #7ccad1;
+            background: #ffffff17;
+            color: #fff
+        }
+
+        .counter {
+            min-width: 58px;
+            color: #8ed9df;
+            font-size: .78rem;
+            font-weight: 800;
+            text-align: right
+        }
+
+        section {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            padding: 68px 5vw 0;
+            overflow: hidden;
+            scroll-snap-align: start
+        }
+
+        .copy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 7vh 7% 9vh 0
+        }
+
+        .eyebrow {
+            margin-bottom: 15px;
+            color: var(--teal);
+            font-size: .74rem;
+            font-weight: 900;
+            letter-spacing: .12em
+        }
+
+        .role {
+            margin: 0 0 18px;
+            color: var(--navy);
+            font-size: clamp(2.05rem, 4vw, 4.5rem);
+            line-height: 1.04;
+            letter-spacing: -.045em
+        }
+
+        .org {
+            margin-bottom: 22px;
+            color: var(--blue);
+            font-size: 1.05rem;
+            font-weight: 900
+        }
+
+        .desc {
+            max-width: 590px;
+            margin: 0;
+            color: #34495e;
+            font-size: 1.08rem;
+            line-height: 1.72
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 26px
+        }
+
+        .tag {
+            padding: 7px 10px;
+            border: 1px solid #d2e4ed;
+            border-radius: 999px;
+            background: #fff;
+            color: #456070;
+            font-size: .75rem;
+            font-weight: 800
+        }
+
+        .visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 450px
+        }
+
+        .gallery {
+            width: min(94%, 730px);
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            align-items: start
+        }
+
+        .gallery.one {
+            grid-template-columns: minmax(0, 1fr);
+            max-width: 510px
+        }
+        
+        .gallery:has(.ratio-portrait) {
+            width: min(94%, 500px);
+        }
+
+        .gallery:has(.ratio-portrait-tall) {
+            width: min(94%, 450px);
+        }
+
+        .image-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 19px;
+            background: #d8ebf2;
+            box-shadow: 0 17px 40px rgba(11, 35, 64, .19)
+        }
+
+        .image-frame.ratio-square {
+            aspect-ratio: 1 / 1
+        }
+
+        .image-frame.ratio-portrait {
+            aspect-ratio: 3 / 4
+        }
+
+        .image-frame.ratio-portrait-tall {
+            aspect-ratio: 2 / 3
+        }
+
+        .image-frame.ratio-landscape {
+            aspect-ratio: 4 / 3
+        }
+
+        .image-frame.ratio-wide {
+            aspect-ratio: 3 / 2;
+        }
+
+            /* ให้ wide image กินพื้นที่เต็ม 2 คอลัมน์ */
+        .gallery:not(.one) .image-frame.ratio-wide {
+            max-width: 700px;
+        }
+
+            /* หากงานนั้นมี wide image เพียงรูปเดียว
+            ให้ gallery กว้างขึ้นได้ */
+        .gallery.one:has(.ratio-wide) {
+            grid-column: 1 / -1;
+        }
+        
+        .image-frame img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: .45;
+            transition: transform .3s, opacity .25s
+        }
+
+        .image-frame img.loaded {
+            opacity: 1
+        }
+
+        .image-frame:hover img {
+            transform: scale(1.04)
+        }
+
+        .image-frame img.focus-top {
+            object-position: center top
+        }
+
+        .image-frame img.focus-face {
+            object-position: center 25%
+        }
+
+        .image-frame img.focus-left {
+            object-position: left center;
+        }
+
+        .image-frame img.focus-right {
+            object-position: right center;
+        }
+
+        .image-frame img.focus-left-top {
+            object-position: left top;
+        }
+
+        .image-frame img.focus-right-top {
+            object-position: right top;
+        }
+
+        .image-frame img.focus-left-bottom {
+            object-position: left bottom;
+        }
+
+        .image-frame img.focus-right-bottom {
+            object-position: right bottom;
+        }
+
+        .image-frame img.focus-bottom {
+            object-position: center bottom;
+        }
+
+        .badge {
+            position: absolute;
+            left: 3%;
+            bottom: 9%;
+            display: grid;
+            place-items: center;
+            width: 68px;
+            height: 68px;
+            border-radius: 19px;
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 1.25rem;
+            font-weight: 900;
+            box-shadow: 0 10px 22px #0003
+        }
+
+        .job:nth-of-type(odd) {
+            background: #fff
+        }
+
+        .cover,
+        .ending {
+            background: var(--navy);
+            color: #fff
+        }
+
+        .cover {
+            grid-template-columns: 1.25fr .75fr
+        }
+
+        .cover .role,
+        .ending .role {
+            color: #fff
+        }
+
+        .cover .desc,
+        .ending .desc {
+            color: #c8dce8
+        }
+
+        .cover .eyebrow {
+            color: #87ddd6
+        }
+
+        .intro-card {
+            align-self: center;
+            padding: 35px;
+            border-radius: 28px;
+            background: linear-gradient(145deg, #146ba0, #199b93);
+            box-shadow: 0 25px 55px #0004
+        }
+
+        .intro-card strong {
+            display: block;
+            margin: 7px 0 16px;
+            font-size: 2.7rem;
+            line-height: 1.05
+        }
+
+        .intro-card p {
+            line-height: 1.65;
+            color: #edffff
+        }
+
+        .cover-profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .profile-image {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            aspect-ratio: 3 / 4;
+
+            margin: 18px auto 0;
+
+            object-fit: cover;
+            object-position: center top;
+
+            border: 3px solid rgba(255, 255, 255, 0.45);
+            border-radius: 22px;
+
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22);
+        }
+
+        .ending .eyebrow {
+            color: var(--gold)
+        }
+
+        .ending .org {
+            color: #8cded9
+        }
+
+        .loader {
+            position: fixed;
+            right: 22px;
+            bottom: 21px;
+            z-index: 31;
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: #fff;
+            font-size: .72rem;
+            font-weight: 900;
+            box-shadow: 0 8px 18px #0004
+        }
+
+        @media(max-width:780px) {
+            html {
+                scroll-snap-type: none
+            }
+
+            .topbar {
+                height: 59px;
+                padding: 0 5vw
+            }
+
+            .nav {
+                gap: 2px
+            }
+
+            .nav a {
+                padding: 8px 7px;
+                font-size: .65rem
+            }
+
+            .counter {
+                display: none
+            }
+
+            section,
+            .cover {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding: 59px 7vw 45px
+            }
+
+            .copy {
+                padding: 8vh 0 4vh
+            }
+
+            .visual {
+                min-height: 270px
+            }
+
+            .gallery {
+                width: 100%
+            }
+
+            .badge {
+                bottom: 0;
+                left: 0;
+                width: 57px;
+                height: 57px
+            }
+
+            .intro-card {
+                margin: 4vh 0
+            }
+
+            .role {
+                font-size: 2.55rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar"><a class="brand" href="#top">PHUWADOL "PAUL" VIROONLUECHA'S CAREER JOURNEY</a>
+        <nav class="nav"><a href="#full-time">FULL-TIME</a><a href="#freelance">FREELANCE</a><a
+                href="#next-chapter">NEXT CHAPTER</a></nav>
+        <div class="counter" id="counter">01 / 35</div>
+    </header>
+    <div class="loader" id="loader">0%</div>
+    <section class="cover" id="top">
+        <div class="copy">
+            <div class="eyebrow">
+                PHUWADOL "PAUL" VIROONLUECHA • CAREER JOURNEY • 2010 — 2026
+            </div>
+
+            <h1 class="role">
+                From entrepreneurship and service to data, AI, and public impact.
+            </h1>
+
+            <p class="desc">
+                A versatile technology and operations professional shaped by experience in
+                business ownership, hospitality, education, HR, logistics, web development,
+                data science, AI safety, and public-sector healthcare. I bring a builder's
+                mindset, cross-cultural communication, and analytical discipline to create
+                solutions that work for people, organizations, and communities.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Data & AI</span>
+                <span class="tag">Technology Strategy</span>
+                <span class="tag">Operations</span>
+                <span class="tag">Leadership</span>
+                <span class="tag">Community</span>
+                <span class="tag">Entrepreneurship</span>
+            </div>
+        </div>
+        <div class="cover-profile">
+            <img
+                class="profile-image"
+                src="images/profile.jpg"
+                alt="Phuwadol Viroonluecha"
+            >
+        </div>
+    </section>
+    <div id="jobs"></div>
+    <section class="ending" id="next-chapter">
+        <div class="copy">
+  <div class="eyebrow">THE NEXT CHAPTER</div>
+
+            <h2 class="role">
+                Creating direction, empowering teams, and delivering outcomes that matter.
+            </h2>
+
+            <div class="org">
+                Leadership • Strategy • Execution • Team Success
+            </div>
+
+            <p class="desc">
+                I aspire to lead teams with purpose, turn ambitious plans into disciplined
+                execution, and create an environment where people can do their best work.
+                Success is not only delivering results—it is building trust, developing
+                others, and achieving meaningful progress together.
+            </p>
+            </div>
+        <div class="visual">
+            <div class="gallery one">
+                <div class="image-frame ratio-wide"><img class="lazy" src="images/nextchapter.jpg"
+                        data-src="images/nextchapter.jpg" alt="Next chapter" loading="lazy"></div>
+            </div>
+            <div class="badge">∞</div>
+        </div>
+    </section>
+    <script>
+        /*
+        รูปแบบที่รองรับ:
+        1) แบบเดิม: 'images/refinitiv-01.jpg'  => square 1:1 โดยอัตโนมัติ
+        2) แบบกำหนดเอง: {src:'images/profile.jpg',ratio:'portrait',focus:'top'}
+        ratio: square | portrait (3:4) | portrait-tall (2:3) | landscape (4:3) | wide (16:9)
+        */
+        const jobs = [
+            ['full-time', 'Founder', 'Udigo Educational Consulting Centre', 'Founded and led an educational consulting venture, combining service design, client relationships, and business ownership.', 
+                ['Entrepreneurship', 'Client service', 'Operations'], ['images/01-udigo.png']],
+
+            ['full-time', 'Co-Owner', 'Pharmacy', 'Co-managed a pharmacy operation where customer trust, inventory awareness, and reliable service mattered every day.', 
+                ['Operations', 'Customer service', 'Ownership'], ['images/02-01-pharmacy.jpg', 'images/02-02-pharmacy.jpg']],
+
+            ['full-time', 'Guest Service Receptionist', 'Tamnak Resort', 'Supported a welcoming and efficient resort experience as a first point of contact for guests.', 
+                ['Hospitality', 'Guest experience', 'Communication'], ['images/02.5-04-Guest-Service.jpg', 'images/02.5-01-Guest-Service.jpg', 'images/02.5-02-Guest-Service.jpg', 'images/02.5-03-Guest-Service.jpg']],
+            
+            ['full-time', 'HR Coordinator', 'Pegus Touristik', 'Supported HR coordination and administration, strengthening people, documentation, and operational follow-through.', 
+                ['HR', 'Coordination', 'Administration'], ['images/03-01-HR-Coordinator.jpg', 'images/03-02-HR-Coordinator.jpg']],
+
+            ['full-time', 'Thai Teacher', 'Siam Sunrise Language School', 'Taught Thai language in an international environment and translated complex ideas into accessible learning.', 
+                ['Teaching', 'Cross-cultural', 'Communication'], ['images/04-02-Thai-Teacher-for-Russians.jpg', 'images/04-03-Thai-Teacher-for-Russians.jpg', 'images/04-01-Thai-Teacher-for-Russians.jpg']],
+            
+            ['full-time', 'Medical Claims Coordinator', 'Best Service Group', 'Coordinated medical-claims work requiring accuracy, process awareness, and sensitive information handling.', 
+                ['Healthcare', 'Accuracy', 'Claims'], ['images/05-03-Medical-Claims-Coordinator.jpg', 'images/05-01-Medical-Claims-Coordinator.jpg', 'images/05-02-Medical-Claims-Coordinator.jpg']],
+            
+            ['full-time', 'Sale & Marketing / Account Executive (Automotive)', 'Summit Keylex/Thai Steel Cable', 'Managed client-facing sales and marketing responsibilities in the automotive sector.', 
+                ['Sales', 'Marketing', 'Account management'], [{src: 'images/05.5-01-Sales-Marketing.jpg', ratio: 'portrait'}, {src: 'images/05.5-02-Sales-Marketing.jpg', ratio: 'portrait'}, {src: 'images/05.5-03-Sales-Marketing.jpg', ratio: 'portrait'}, {src: 'images/05.5-04-Sales-Marketing.jpg', ratio: 'portrait'}]],
+            
+            ['full-time', 'Guest Service Agent / Bell Boy / Guest Relation Officer', 'Mövenpick Pattaya', 'Delivered guest-facing service across multiple hospitality functions and represented a global hotel brand professionally.', 
+                ['Guest relations', 'Service recovery', 'Hospitality'], [ {src: 'images/06-02-Guest-Service2.jpg', ratio: 'portrait'}, {src: 'images/06-03-Guest-Service2.jpg', ratio: 'portrait'},{src: 'images/06-01-Guest-Service2.png', ratio: 'landscape'}]],
+            
+            ['full-time', 'Web Developer (WordPress)', 'WorldWide Thailand', 'Built and maintained WordPress web experiences, translating business needs into practical digital pages.', 
+                ['WordPress', 'Web development', 'Digital'], ['images/07-01-Web-dev1.jpg']],
+            
+            ['full-time', 'Office & Operation Manager (FDA, Logistics, Import, HR, Budget)', 'Asian Trading Network', 'Managed FDA-related work, logistics, imports, HR, and budgeting—an end-to-end commercial operations role.', 
+                ['Logistics', 'Budget', 'FDA', 'HR'], [{src: 'images/08-01-Operation-mgr.jpg', ratio:'landscape'},{src: 'images/08-02-Operation-mgr.jpg', ratio:'landscape'}, {src: 'images/08-03-Operation-mgr.jpg', ratio: 'portrait'}]],
+            
+            ['full-time', 'Engagement Specialist', 'Microsoft (MSN GLOBAL)', 'Supported engagement work that brought together people, communication, and technology in an enterprise environment.', 
+                ['Microsoft', 'Engagement', 'Stakeholders'],[{src: 'images/09-02-Engagement-Specialist.jpg', ratio: 'landscape'}, {src: 'images/09-04-Engagement-Specialist.jpg', ratio: 'landscape'}, {src: 'images/09-03-Engagement-Specialist.jpg', ratio: 'portrait', focus:'left'}, {src: 'images/09-01-Engagement-Specialist.jpg', ratio: 'portrait', focus:'left'}]],
+            
+            ['full-time', 'Web Developer', 'MoreMX.com', 'Developed web solutions for an online platform, combining technical delivery with digital-business awareness.', 
+                ['Web', 'Online business', 'Development'], ['images/10-01-Web-dev2.jpg', 'images/10-02-Web-dev2.jpg', {src: 'images/10-03-Web-dev2.jpg', ratio: 'portrait'}]],
+            
+            ['full-time', 'Web Developer / Data Scientist', 'JobBKK', 'Worked at the intersection of web development and data science for a recruitment platform.', 
+                ['Data science', 'Web', 'Recruitment tech'], ['images/11-01-Webdev-Data-Sceince.jpg', 'images/11-03-Webdev-Data-Sceince.jpg', {src: 'images/11-02-Webdev-Data-Sceince.jpg', ratio: 'portrait'}]],
+            
+            ['full-time', 'Data Scientist', 'Refinitiv', 'Worked in a global financial-data environment, developing analytical rigor and enterprise data-product experience.', 
+                ['Data science', 'Financial data', 'Analytics'], [{src: 'images/12-03-Data-Scientist.jpg', ratio: 'landscape'}, {src: 'images/12-01-Data-Scientist.jpg', ratio: 'landscape'}, {src: 'images/12-02-Data-Scientist.jpg', ratio: 'portrait'}]],
+            
+            ['full-time', 'PhD Researcher', 'Technical University of Cartagena', 'Conducted doctoral-level Information Technology research, developing structured inquiry and analytical depth.', 
+                ['PhD', 'Research', 'Information technology'], [{src: 'images/13-01-AI-researcher.jpg', ratio: 'landscape'},{src: 'images/13-02-AI-researcher.jpg', ratio: 'landscape'},'images/13-03-AI-researcher.jpg','images/13-04-AI-researcher.jpg']],
+            
+            ['full-time', 'IT Generalist', 'CCA, Baitong Thai Restaurant, Mekong Asian Market', 'Provided practical IT support across education, restaurant, and community-market settings.', 
+                ['IT support', 'Small business', 'Community'], [{src: 'images/14-03-IT.jpg', ratio: 'portrait-tall'},{src: 'images/14-01-IT.jpg', ratio: 'portrait'},'images/14-02-IT.jpg']],
+            
+            ['full-time', 'Helicopter Mechanic (Chinook)', 'US Army Reserve', 'Served in a precision-oriented maintenance role reflecting discipline, teamwork, procedural rigor, and reliability.', 
+                ['US Army Reserve', 'Maintenance', 'Reliability'], ['images/15-03-Army.jpg','images/15-01-Army.jpg', {src:  'images/15-02-Army.jpg', ration:'portrait'}]],
+            
+            ['full-time', 'AI Safety & Trust Data Analyst', 'Meta', 'Performed data analysis supporting AI safety and trust-related objectives in a quality- and policy-focused environment.', 
+                ['AI safety', 'Trust', 'Data analysis'], ['images/16-01-Ai-Safety-Analyst.jpg','images/16-02-Ai-Safety-Analyst.jpg', {src: 'images/16-03-Ai-Safety-Analyst.jpg', ratio: 'portrait'}]],
+            
+            ['full-time', 'Data Engineer / Business Intelligence Developer', 'California Department of Health Care Services', 'Develops data-engineering and BI capabilities that improve healthcare operations and public-service decision support.', 
+                ['Data engineering', 'BI', 'Healthcare', 'Public sector'], ['images/17-01-Data-Engineer.jpg', 'images/17-02-Data-Engineer.jpg']],
+            
+            ['freelance', 'Guest Speaker', 'UTCC | Eduzone Expo', 'Shared professional knowledge as a guest speaker, turning real-world experience into useful learning.', 
+                ['Speaking', 'Education', 'Knowledge sharing'], ['images/1014-01-Guest-Speaker-in-Edu-Expo.jpg', 'images/1015-01-Guest-Speaker-in-UTCC.jpg','images/1015-02-Guest-Speaker-in-UTCC.png']],
+            
+            ['freelance', 'Independent Forex Market Trader', 'Self-Directed Trading', 'Researched foreign-exchange markets through technical analysis, economic indicators, and market-news monitoring. Applied structured risk-management practices and maintained personal trading records to evaluate decision-making and strategy performance.',
+                ['Market Research', 'Technical Analysis', 'Economic Indicators', 'Risk Management'], ['images/1012-01-Forex-Trader.jpg','images/1012-02-Forex-Trader.jpg']],
+
+            ['freelance', 'Insurance Agent', 'Part-Time / Freelance', 'Worked in a client-advisory environment where trust, product knowledge, and clear communication are essential.', 
+                ['Insurance', 'Advisory', 'Sales'], ['images/1016-01-Life-Insurance-Agent.jpg','images/1016-02-Life-Insurance-Agent-US.jpg']],
+            
+            ['freelance', 'Russian Interpreter', 'Part-Time / Freelance', 'Enabled communication across Thai, Russian, and international contexts with cultural awareness.', 
+                ['Russian', 'Interpretation', 'Cross-cultural'], [{src:'images/1021-01-Russian-Interpreter.jpg', ratio:'wide'}]],
+            
+            ['freelance', 'Russian Teacher', 'Public School in Pattaya', 'Taught Russian in a high-school setting, adapting instruction to support learners.', 
+                ['Russian', 'Teaching', 'Youth education'], ['images/1009-01-Russian-Teacher-for-Thai-student.jpg',{src:'images/1009-02-Russian-Teacher-for-Thai-student.jpg', focus:'left'},'images/1009-03-Russian-Teacher-for-Thai-student.jpg', {src:'images/1009-04-Russian-Teacher-for-Thai-student.jpg', focus:'left'}]],
+            
+            ['freelance', 'Secondhand Car Seller', 'Part-Time / Freelance', 'Handled customer conversations and transactions in the used-car market.', 
+                ['Automotive', 'Negotiation', 'Sales'], ['images/1011-01-Used-Car-Sales.jpg', 'images/1011-02-Used-Car-Sales.jpg', 'images/1011-03-Used-Car-Sales.jpg']],
+            
+            ['freelance', 'Language Camp Co-Organizer', 'Pattaya School District', 'Co-organized language-camp activities for students, combining learning, event coordination, and engagement.', 
+                ['Event coordination', 'Education', 'Community'], ['images/1010-01-Russian-Language-Camp-for-Thai-student.jpg', 'images/1010-02-Russian-Language-Camp-for-Thai-student.jpg']],
+            
+            ['freelance', 'Credit Card Agent', 'Part-Time / Freelance', 'Supported customer-facing credit-card work, explaining products, needs, and processes clearly.', 
+                ['Sales', 'Financial services', 'Customer support'], [{src:'images/1013-01-Credit-Card-Sales.jpg', ratio: 'wide'}]],
+
+            ['freelance', 'Dessert Seller', 'Part-Time / Freelance', 'Ran a small food-selling activity, managing customer interaction and everyday micro-business operations.', 
+                ['Small business', 'Food', 'Customer service'], ['images/1017-01-Dessert-Seller.jpg']],
+            
+            ['freelance', 'Online Order Filling', 'Part-Time / Freelance', 'Supported online-order fulfillment with accuracy, timeliness, and dependable execution.', 
+                ['E-commerce', 'Fulfillment', 'Operations'], [{src:'images/1019-01-Shopper.jpg', ratio:'portrait', focus: 'top'}, {src:'images/1019-02-Shopper.jpg', ratio:'portrait'}]],
+            
+            ['freelance', 'Food Delivery Shopper', 'Part-Time / Freelance', 'Fulfilled online grocery and food orders by accurately selecting items, managing substitutions, and completing deliveries on time. Maintained reliable customer service in a fast-paced delivery environment.',
+                ['Food Delivery', 'Order Fulfillment', 'Customer Service', 'Logistics'], ['images/1018-01-DoorDasher.jpg']],
+
+            ['freelance', 'Survey Field Interviewer', 'Part-Time / Freelance', 'Collected field-survey information through direct interviews while maintaining data quality.', 
+                ['Survey', 'Fieldwork', 'Data quality'], ['images/1022-01-Survey-Field-Interviewer.jpg', 'images/1022-02-Survey-Field-Interviewer.jpg', 'images/1022-03-Survey-Field-Interviewer.jpg']],
+            
+            ['freelance', 'Canned Food Line Worker', 'Part-Time / Freelance', 'Contributed to production-line work where safety, pace, teamwork, and repeatable processes matter.', 
+                ['Manufacturing', 'Quality', 'Teamwork'], [{src:'images/1025-01-cannedfood.jpg',ratio:'landscape'}]],
+            
+            ['freelance', 'Online Community Founder and Admin', 'Part-Time / Freelance', 'Founded and administered an online community, shaping its content, engagement, and operating rules.', 
+                ['Community', 'Administration', 'Digital'], [{src:'images/1024-01-Thai-fb-commu.jpg',ratio:'landscape'},{src:'images/1024-02-Thai-fb-commu.jpg',ratio:'landscape'}]],
+            
+            ['freelance', 'Thai Community in Russia Web Developer and Webmaster', 'Part-Time / Freelance', 'Built and maintained a web presence for a Thai community in Russia, combining web skills with community communication.', 
+                ['Webmaster', 'Community', 'Web development'], [{src:'images/1023-02-Meekao-webmaster.png',ratio:'landscape'},{src:'images/1023-01-Meekao-webmaster.jpg',ratio:'landscape'}]]
+        ];
+        function placeholder(label) {return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900"><rect width="900" height="900" fill="#d8ebf2"/><circle cx="720" cy="170" r="260" fill="#146ba0" opacity=".13"/><text x="450" y="430" text-anchor="middle" font-family="Arial" font-size="43" font-weight="700" fill="#146ba0">ADD IMAGE</text><text x="450" y="485" text-anchor="middle" font-family="Arial" font-size="23" fill="#607080">${label}</text></svg>`)}
+        function normalize(photo, title) {return typeof photo === 'string' ? {src: photo, ratio: 'square', focus: ''} : {src: photo.src, ratio: photo.ratio || 'square', focus: photo.focus || ''}}
+        function jobSection(j, i) {const [g, title, org, desc, tags, photos] = j, firstFull = i === 0 ? 'id="full-time"' : '', firstFree = g === 'freelance' && jobs.slice(0, i).every(x => x[0] !== 'freelance') ? 'id="freelance"' : '', images = photos.length ? photos.map(p => normalize(p, title)) : [{src: placeholder(title), ratio: 'square', focus: ''}]; return `<section class="job" ${firstFull} ${firstFree}><div class="copy"><div class="eyebrow">${g === 'full-time' ? 'FULL-TIME CAREER' : 'PART-TIME / FREELANCE'} • ${String(i + 1).padStart(2, '0')}</div><h2 class="role">${title}</h2><div class="org">${org}</div><p class="desc">${desc}</p><div class="tags">${tags.map(t => `<span class="tag">${t}</span>`).join('')}</div></div><div class="visual"><div class="gallery ${images.length === 1 ? 'one' : ''}">${images.map((image, n) => `<div class="image-frame ratio-${image.ratio}"><img class="lazy ${image.focus ? 'focus-' + image.focus : ''}" src="images/placeholder.svg" data-src="${image.src}" alt="${title}, image ${n + 1}" loading="lazy"></div>`).join('')}</div><div class="badge">${String(i + 1).padStart(2, '0')}</div></div></section>`}
+        document.getElementById('jobs').innerHTML = jobs.map(jobSection).join('');
+        const lazyObserver = new IntersectionObserver(es => es.forEach(e => {if (e.isIntersecting) {const img = e.target; img.src = img.dataset.src; img.classList.add('loaded'); lazyObserver.unobserve(img)} }), {rootMargin: '500px 0px'}); document.querySelectorAll('img.lazy').forEach(i => lazyObserver.observe(i));
+        const sections = [...document.querySelectorAll('section')], counter = document.getElementById('counter'), loader = document.getElementById('loader'); const sectionObserver = new IntersectionObserver(es => es.forEach(e => {if (e.isIntersecting) {const n = sections.indexOf(e.target) + 1; counter.textContent = `${String(n).padStart(2, '0')} / ${String(sections.length).padStart(2, '0')}`; loader.textContent = Math.round(n / sections.length * 100) + '%'} }), {threshold: .55}); sections.forEach(s => sectionObserver.observe(s));
+    </script>
+</body>
+
+</html>
