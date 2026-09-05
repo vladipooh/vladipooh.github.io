@@ -133,6 +133,15 @@
             line-height: 1.72
         }
 
+        .desc.thai-desc {
+            margin-top: 8px;
+            color: #607080;
+            font-family: "Noto Sans Thai", "Tahoma", "Leelawadee UI", sans-serif;
+            font-size: 0.94rem;
+            font-weight: 400;
+            line-height: 1.78;
+        }
+
         .tags {
             display: flex;
             flex-wrap: wrap;
@@ -525,111 +534,506 @@
         ratio: square | portrait (3:4) | portrait-tall (2:3) | landscape (4:3) | wide (16:9)
         */
         const jobs = [
-            ['full-time', 'Founder', 'Udigo Educational Consulting Centre', 'Founded and led an educational consulting venture, combining service design, client relationships, and business ownership.', 
-                ['Entrepreneurship', 'Client service', 'Operations'], ['images/01-Udigo.png']],
+            [
+                'full-time',
+                'Founder & Director',
+                'Udigo Educational Consulting Centre',
+                'Founded and led an education-consulting venture supporting Thai students with language preparation, university coordination, and overseas-study pathways.',
+                'ก่อตั้งและบริหารธุรกิจแนะแนวการศึกษา ช่วยนักเรียนไทยเตรียมภาษา สมัครมหาวิทยาลัย และวางแผนศึกษาต่อต่างประเทศ',
+                ['Entrepreneurship', 'Education', 'Client Service', 'Operations'],
+                ['images/01-Udigo.png']
+            ],
 
-            ['full-time', 'Co-Owner', 'Pharmacy', 'Co-managed a pharmacy operation where customer trust, inventory awareness, and reliable service mattered every day.', 
-                ['Operations', 'Customer service', 'Ownership'], ['images/02-01-pharmacy.jpg', 'images/02-02-pharmacy.jpg']],
+            [
+                'full-time',
+                'Co-Owner',
+                'Pharmacy',
+                'Co-managed a pharmacy operation, building practical experience in customer trust, inventory awareness, service quality, and daily business operations.',
+                'ร่วมบริหารกิจการร้านขายยา ดูแลงานบริการลูกค้า สินค้าคงคลัง คุณภาพการบริการ และการดำเนินงานประจำวัน',
+                ['Operations', 'Customer Service', 'Inventory', 'Ownership'],
+                ['images/02-01-pharmacy.jpg', 'images/02-02-pharmacy.jpg']
+            ],
 
-            ['full-time', 'Guest Service Receptionist', 'Tamnak Resort', 'Supported a welcoming and efficient resort experience as a first point of contact for guests.', 
-                ['Hospitality', 'Guest experience', 'Communication'], ['images/02.5-04-Guest-Service.jpg', 'images/02.5-01-Guest-Service.jpg', 'images/02.5-02-Guest-Service.jpg', 'images/02.5-03-Guest-Service.jpg']],
-            
-            ['full-time', 'HR Coordinator', 'Pegus Touristik', 'Supported HR coordination and administration, strengthening people, documentation, and operational follow-through.', 
-                ['HR', 'Coordination', 'Administration'], ['images/03-01-HR-Coordinator.jpg', 'images/03-02-HR-Coordinator.jpg']],
+            [
+                'full-time',
+                'Guest Service Receptionist',
+                'Tamnak Resort',
+                'Supported front-desk and guest-service operations, helping create a welcoming, organized, and responsive experience for visitors.',
+                'สนับสนุนงานต้อนรับและบริการแขก ช่วยสร้างประสบการณ์ที่เป็นมิตร เป็นระบบ และตอบสนองต่อความต้องการของผู้เข้าพัก',
+                ['Hospitality', 'Guest Experience', 'Communication'],
+                [
+                    'images/02.5-04-Guest-Service.jpg',
+                    'images/02.5-01-Guest-Service.jpg',
+                    'images/02.5-02-Guest-Service.jpg',
+                    'images/02.5-03-Guest-Service.jpg'
+                ]
+            ],
 
-            ['full-time', 'Thai Teacher', 'Siam Sunrise Language School', 'Taught Thai language in an international environment and translated complex ideas into accessible learning.', 
-                ['Teaching', 'Cross-cultural', 'Communication'], ['images/04-02-Thai-Teacher-for-Russians.jpg', 'images/04-03-Thai-Teacher-for-Russians.jpg', 'images/04-01-Thai-Teacher-for-Russians.jpg']],
-            
-            ['full-time', 'Medical Claims Coordinator', 'Best Service Group', 'Coordinated medical-claims work requiring accuracy, process awareness, and sensitive information handling.', 
-                ['Healthcare', 'Accuracy', 'Claims'], ['images/05-03-Medical-Claims-Coordinator.jpg', 'images/05-01-Medical-Claims-Coordinator.jpg', 'images/05-02-Medical-Claims-Coordinator.jpg']],
-            
-            ['full-time', 'Sale & Marketing / Account Executive (Automotive)', 'Summit Keylex/Thai Steel Cable', 'Managed client-facing sales and marketing responsibilities in the automotive sector.', 
-                ['Sales', 'Marketing', 'Account management'], [{src: 'images/05.5-01-Sales-Marketing.jpg', ratio: 'portrait'}, {src: 'images/05.5-02-Sales-Marketing.jpg', ratio: 'portrait'}, {src: 'images/05.5-03-Sales-Marketing.jpg', ratio: 'portrait'}, {src: 'images/05.5-04-Sales-Marketing.jpg', ratio: 'portrait'}]],
-            
-            ['full-time', 'Guest Service Agent / Bell Boy / Guest Relation Officer', 'Mövenpick Pattaya', 'Delivered guest-facing service across multiple hospitality functions and represented a global hotel brand professionally.', 
-                ['Guest relations', 'Service recovery', 'Hospitality'], [ {src: 'images/06-02-Guest-Service2.jpg', ratio: 'portrait'}, {src: 'images/06-03-Guest-Service2.jpg', ratio: 'portrait'},{src: 'images/06-01-Guest-Service2.png', ratio: 'landscape'}]],
-            
-            ['full-time', 'Web Developer (WordPress)', 'WorldWide Thailand', 'Built and maintained WordPress web experiences, translating business needs into practical digital pages.', 
-                ['WordPress', 'Web development', 'Digital'], ['images/07-01-Web-dev1.jpg']],
-            
-            ['full-time', 'Office & Operation Manager (FDA, Logistics, Import, HR, Budget)', 'Asian Trading Network', 'Managed FDA-related work, logistics, imports, HR, and budgeting—an end-to-end commercial operations role.', 
-                ['Logistics', 'Budget', 'FDA', 'HR'], [{src: 'images/08-01-Operation-mgr.jpg', ratio:'landscape'},{src: 'images/08-02-Operation-mgr.jpg', ratio:'landscape'}, {src: 'images/08-03-Operation-mgr.jpg', ratio: 'portrait'}]],
-            
-            ['full-time', 'Engagement Specialist', 'Microsoft (MSN GLOBAL)', 'Supported engagement work that brought together people, communication, and technology in an enterprise environment.', 
-                ['Microsoft', 'Engagement', 'Stakeholders'],[{src: 'images/09-02-Engagement-Specialist.jpg', ratio: 'landscape'}, {src: 'images/09-04-Engagement-Specialist.jpg', ratio: 'landscape'}, {src: 'images/09-03-Engagement-Specialist.jpg', ratio: 'portrait', focus:'left'}, {src: 'images/09-01-Engagement-Specialist.jpg', ratio: 'portrait', focus:'left'}]],
-            
-            ['full-time', 'Web Developer', 'MoreMX.com', 'Developed web solutions for an online platform, combining technical delivery with digital-business awareness.', 
-                ['Web', 'Online business', 'Development'], ['images/10-01-Web-dev2.jpg', 'images/10-02-Web-dev2.jpg', {src: 'images/10-03-Web-dev2.jpg', ratio: 'portrait'}]],
-            
-            ['full-time', 'Web Developer / Data Scientist', 'JobBKK', 'Worked at the intersection of web development and data science for a recruitment platform.', 
-                ['Data science', 'Web', 'Recruitment tech'], ['images/11-01-Webdev-Data-Sceince.jpg', 'images/11-03-Webdev-Data-Sceince.jpg', {src: 'images/11-02-Webdev-Data-Sceince.jpg', ratio: 'portrait'}]],
-            
-            ['full-time', 'Data Scientist', 'Refinitiv', 'Worked in a global financial-data environment, developing analytical rigor and enterprise data-product experience.', 
-                ['Data science', 'Financial data', 'Analytics'], [{src: 'images/12-03-Data-Scientist.jpg', ratio: 'landscape'}, {src: 'images/12-01-Data-Scientist.jpg', ratio: 'landscape'}, {src: 'images/12-02-Data-Scientist.jpg', ratio: 'portrait'}]],
-            
-            ['full-time', 'PhD Researcher', 'Technical University of Cartagena', 'Conducted doctoral-level Information Technology research, developing structured inquiry and analytical depth.', 
-                ['PhD', 'Research', 'Information technology'], [{src: 'images/13-01-AI-researcher.jpg', ratio: 'landscape'},{src: 'images/13-02-AI-researcher.jpg', ratio: 'landscape'},'images/13-03-AI-researcher.jpg','images/13-04-AI-researcher.jpg']],
-            
-            ['full-time', 'IT Generalist', 'CCA, Baitong Thai Restaurant, Mekong Asian Market', 'Provided practical IT support across education, restaurant, and community-market settings.', 
-                ['IT support', 'Small business', 'Community'], [{src: 'images/14-03-IT.jpg', ratio: 'portrait-tall'},{src: 'images/14-01-IT.jpg', ratio: 'portrait'},'images/14-02-IT.jpg']],
-            
-            ['full-time', 'Helicopter Mechanic (Chinook)', 'US Army Reserve', 'Served in a precision-oriented maintenance role reflecting discipline, teamwork, procedural rigor, and reliability.', 
-                ['US Army Reserve', 'Maintenance', 'Reliability'], ['images/15-03-Army.jpg','images/15-01-Army.jpg', {src:  'images/15-02-Army.jpg', ration:'portrait'}]],
-            
-            ['full-time', 'AI Safety & Trust Data Analyst', 'Meta', 'Performed data analysis supporting AI safety and trust-related objectives in a quality- and policy-focused environment.', 
-                ['AI safety', 'Trust', 'Data analysis'], ['images/16-01-Ai-Safety-Analyst.jpg','images/16-02-Ai-Safety-Analyst.jpg', {src: 'images/16-03-Ai-Safety-Analyst.jpg', ratio: 'portrait'}]],
-            
-            ['full-time', 'Data Engineer / Business Intelligence Developer', 'California Department of Health Care Services', 'Develops data-engineering and BI capabilities that improve healthcare operations and public-service decision support.', 
-                ['Data engineering', 'BI', 'Healthcare', 'Public sector'], ['images/17-01-Data-Engineer.jpg', 'images/17-02-Data-Engineer.jpg']],
-            
-            ['freelance', 'Guest Speaker', 'UTCC | Eduzone Expo', 'Shared professional knowledge as a guest speaker, turning real-world experience into useful learning.', 
-                ['Speaking', 'Education', 'Knowledge sharing'], ['images/1014-01-Guest-Speaker-in-Edu-Expo.jpg', 'images/1015-01-Guest-Speaker-in-UTCC.jpg','images/1015-02-Guest-Speaker-in-UTCC.png']],
-            
-            ['freelance', 'Independent Forex Market Trader', 'Self-Directed Trading', 'Researched foreign-exchange markets through technical analysis, economic indicators, and market-news monitoring. Applied structured risk-management practices and maintained personal trading records to evaluate decision-making and strategy performance.',
-                ['Market Research', 'Technical Analysis', 'Economic Indicators', 'Risk Management'], ['images/1012-01-Forex-Trader.jpg','images/1012-02-Forex-Trader.jpg']],
+            [
+                'full-time',
+                'HR Coordinator',
+                'Pegus Touristik',
+                'Supported HR coordination and administrative processes, strengthening skills in documentation, employee communication, and operational follow-through.',
+                'สนับสนุนงานประสานงานทรัพยากรบุคคลและธุรการ พัฒนาทักษะด้านเอกสาร การสื่อสารกับพนักงาน และการติดตามงาน',
+                ['HR', 'Coordination', 'Administration', 'Documentation'],
+                ['images/03-01-HR-Coordinator.jpg', 'images/03-02-HR-Coordinator.jpg']
+            ],
 
-            ['freelance', 'Insurance Agent', 'Part-Time / Freelance', 'Worked in a client-advisory environment where trust, product knowledge, and clear communication are essential.', 
-                ['Insurance', 'Advisory', 'Sales'], ['images/1016-01-Life-Insurance-Agent.jpg','images/1016-02-Life-Insurance-Agent-US.jpg']],
-            
-            ['freelance', 'Russian Interpreter', 'Part-Time / Freelance', 'Enabled communication across Thai, Russian, and international contexts with cultural awareness.', 
-                ['Russian', 'Interpretation', 'Cross-cultural'], [{src:'images/1021-01-Russian-Interpreter.jpg', ratio:'wide'}]],
-            
-            ['freelance', 'Russian Teacher', 'Public School in Pattaya', 'Taught Russian in a high-school setting, adapting instruction to support learners.', 
-                ['Russian', 'Teaching', 'Youth education'], ['images/1009-01-Russian-Teacher-for-Thai-student.jpg',{src:'images/1009-02-Russian-Teacher-for-Thai-student.jpg', focus:'left'},'images/1009-03-Russian-Teacher-for-Thai-student.jpg', {src:'images/1009-04-Russian-Teacher-for-Thai-student.jpg', focus:'left'}]],
-            
-            ['freelance', 'Secondhand Car Seller', 'Part-Time / Freelance', 'Handled customer conversations and transactions in the used-car market.', 
-                ['Automotive', 'Negotiation', 'Sales'], ['images/1011-01-Used-Car-Sales.jpg', 'images/1011-02-Used-Car-Sales.jpg', 'images/1011-03-Used-Car-Sales.jpg']],
-            
-            ['freelance', 'Language Camp Co-Organizer', 'Pattaya School District', 'Co-organized language-camp activities for students, combining learning, event coordination, and engagement.', 
-                ['Event coordination', 'Education', 'Community'], ['images/1010-01-Russian-Language-Camp-for-Thai-student.jpg', 'images/1010-02-Russian-Language-Camp-for-Thai-student.jpg']],
-            
-            ['freelance', 'Credit Card Agent', 'Part-Time / Freelance', 'Supported customer-facing credit-card work, explaining products, needs, and processes clearly.', 
-                ['Sales', 'Financial services', 'Customer support'], [{src:'images/1013-01-Credit-Card-Sales.jpg', ratio: 'wide'}]],
+            [
+                'full-time',
+                'Thai Language Instructor',
+                'Siam Sunrise Language School',
+                'Taught Thai language to international learners, particularly Russian-speaking students, using culturally relevant and accessible learning approaches.',
+                'สอนภาษาไทยให้ผู้เรียนต่างชาติ โดยเฉพาะผู้เรียนชาวรัสเซีย ด้วยแนวทางที่เข้าใจง่ายและเชื่อมโยงกับบริบททางวัฒนธรรม',
+                ['Teaching', 'Thai Language', 'Cross-Cultural', 'Communication'],
+                [
+                    'images/04-02-Thai-Teacher-for-Russians.jpg',
+                    'images/04-03-Thai-Teacher-for-Russians.jpg',
+                    'images/04-01-Thai-Teacher-for-Russians.jpg',
+                    'images/04-04-Thai-Teacher-for-Russians.jpg'
+                ]
+            ],
 
-            ['freelance', 'Dessert Seller', 'Part-Time / Freelance', 'Ran a small food-selling activity, managing customer interaction and everyday micro-business operations.', 
-                ['Small business', 'Food', 'Customer service'], ['images/1017-01-Dessert-Seller.jpg']],
-            
-            ['freelance', 'Online Order Filling', 'Part-Time / Freelance', 'Supported online-order fulfillment with accuracy, timeliness, and dependable execution.', 
-                ['E-commerce', 'Fulfillment', 'Operations'], [{src:'images/1019-01-Shopper.jpg', ratio:'portrait', focus: 'top'}, {src:'images/1019-02-Shopper.jpg', ratio:'portrait'}]],
-            
-            ['freelance', 'Food Delivery Shopper', 'Part-Time / Freelance', 'Fulfilled online grocery and food orders by accurately selecting items, managing substitutions, and completing deliveries on time. Maintained reliable customer service in a fast-paced delivery environment.',
-                ['Food Delivery', 'Order Fulfillment', 'Customer Service', 'Logistics'], ['images/1018-01-DoorDasher.jpg']],
+            [
+                'full-time',
+                'Medical Claims & Business Development Executive',
+                'Best Service Group',
+                'Negotiated partnerships and referral agreements with hospitals and clinics, including credit-term arrangements. Coordinated medical claims and healthcare support for insured travelers and Russian-speaking clients.',
+                'เจรจาความร่วมมือและทำสัญญาส่งต่อผู้ป่วยกับโรงพยาบาลและคลินิก รวมถึงขอเงื่อนไขเครดิตเทอม ประสานงานด้านเคลมและการสนับสนุนบริการสุขภาพสำหรับผู้มีประกันและลูกค้าชาวรัสเซีย',
+                ['Healthcare', 'Business Development', 'B2B Negotiation', 'Medical Claims', 'Provider Network', 'Russian'],
+                [
+                    'images/05-03-Medical-Claims-Coordinator.jpg',
+                    'images/05-01-Medical-Claims-Coordinator.jpg',
+                    'images/05-02-Medical-Claims-Coordinator.jpg',
+                    'images/05-04-Medical-Claims-Coordinator.jpg'
+                ]
+            ],
 
-            ['freelance', 'Survey Field Interviewer', 'Part-Time / Freelance', 'Collected field-survey information through direct interviews while maintaining data quality.', 
-                ['Survey', 'Fieldwork', 'Data quality'], ['images/1022-01-Survey-Field-Interviewer.jpg', 'images/1022-02-Survey-Field-Interviewer.jpg', 'images/1022-03-Survey-Field-Interviewer.jpg']],
-            
-            ['freelance', 'Canned Food Line Worker', 'Part-Time / Freelance', 'Contributed to production-line work where safety, pace, teamwork, and repeatable processes matter.', 
-                ['Manufacturing', 'Quality', 'Teamwork'], [{src:'images/1025-01-cannedfood.jpg',ratio:'landscape'}]],
-            
-            ['freelance', 'Online Community Founder and Admin', 'Part-Time / Freelance', 'Founded and administered an online community, shaping its content, engagement, and operating rules.', 
-                ['Community', 'Administration', 'Digital'], [{src:'images/1024-01-Thai-fb-commu.jpg',ratio:'landscape'},{src:'images/1024-02-Thai-fb-commu.jpg',ratio:'landscape'}]],
-            
-            ['freelance', 'Thai Community in Russia Web Developer and Webmaster', 'Part-Time / Freelance', 'Built and maintained a web presence for a Thai community in Russia, combining web skills with community communication.', 
-                ['Webmaster', 'Community', 'Web development'], [{src:'images/1023-02-Meekao-webmaster.png',ratio:'landscape'},{src:'images/1023-01-Meekao-webmaster.jpg',ratio:'landscape'}]]
+            [
+                'full-time',
+                'Sales & Marketing / Account Executive',
+                'Summit Keylex / Thai Steel Cable',
+                'Managed client relationships and sales activities in the automotive sector, supported by market research, account reporting, and customer-focused communication.',
+                'ดูแลลูกค้าและงานขายในอุตสาหกรรมยานยนต์ สนับสนุนด้วยการวิเคราะห์ตลาด รายงานบัญชีลูกค้า และการสื่อสารที่มุ่งเน้นลูกค้า',
+                ['Sales', 'Marketing', 'Account Management', 'Automotive'],
+                [
+                    { src: 'images/05.5-01-Sales-Marketing.jpg', ratio: 'portrait' },
+                    { src: 'images/05.5-02-Sales-Marketing.jpg', ratio: 'portrait' },
+                    { src: 'images/05.5-03-Sales-Marketing.jpg', ratio: 'portrait' },
+                    { src: 'images/05.5-04-Sales-Marketing.jpg', ratio: 'portrait' }
+                ]
+            ],
+
+            [
+                'full-time',
+                'Guest Service Agent / Bell Boy / Guest Relations Officer',
+                'Mövenpick Pattaya',
+                'Delivered multilingual guest service across front-office, concierge, bell, and guest-relations functions for an international hospitality brand.',
+                'ให้บริการแขกหลายภาษาในงานต้อนรับ คอนเซียร์จ เบลบอย และ guest relations สำหรับโรงแรมระดับนานาชาติ',
+                ['Guest Relations', 'Hospitality', 'Multilingual Service', 'Service Recovery'],
+                [
+                    { src: 'images/06-02-Guest-Service2.jpg', ratio: 'portrait' },
+                    { src: 'images/06-03-Guest-Service2.jpg', ratio: 'portrait' },
+                    { src: 'images/06-01-Guest-Service2.png', ratio: 'landscape' },
+                    { src: 'images/06-04-Guest-Service2.jpg', ratio: 'portrait' }
+                ]
+            ],
+
+            [
+                'full-time',
+                'Web Developer (WordPress)',
+                'WorldWide Thailand',
+                'Built and maintained WordPress-based websites, translating business needs into practical digital experiences and maintainable web content.',
+                'พัฒนาและดูแลเว็บไซต์ WordPress เปลี่ยนความต้องการทางธุรกิจให้เป็นเว็บไซต์และเนื้อหาดิจิทัลที่ใช้งานได้จริง',
+                ['WordPress', 'Web Development', 'Digital Content'],
+                ['images/07-01-Web-dev1.jpg']
+            ],
+
+            [
+                'full-time',
+                'Office & Operations Manager',
+                'Asian Trading Network',
+                'Managed end-to-end commercial operations spanning FDA-related work, logistics, imports, warehousing, HR, budgeting, and internal processes.',
+                'บริหารงานปฏิบัติการเชิงพาณิชย์แบบครบวงจร ครอบคลุมงาน FDA โลจิสติกส์ นำเข้า คลังสินค้า HR งบประมาณ และกระบวนการภายใน',
+                ['Operations', 'Logistics', 'Import', 'Budgeting', 'HR'],
+                [
+                    { src: 'images/08-01-Operation-mgr.jpg', ratio: 'landscape' },
+                    { src: 'images/08-02-Operation-mgr.jpg', ratio: 'landscape' },
+                    { src: 'images/08-03-Operation-mgr.jpg' },
+                    { src: 'images/08-04-Operation-mgr.jpg' }
+                ]
+            ],
+
+            [
+                'full-time',
+                'Marketing Data Analyst / Engagement Specialist',
+                'Microsoft (MSN Global)',
+                'Supported data-informed audience-engagement and content strategies, collaborating with partners to improve campaign and website effectiveness.',
+                'สนับสนุนกลยุทธ์ด้านเนื้อหาและการมีส่วนร่วมของผู้ใช้งานโดยใช้ข้อมูล ทำงานร่วมกับพันธมิตรเพื่อเพิ่มประสิทธิภาพของแคมเปญและเว็บไซต์',
+                ['Microsoft', 'Marketing Analytics', 'Engagement', 'Stakeholders'],
+                [
+                    { src: 'images/09-02-Engagement-Specialist.jpg', ratio: 'landscape' },
+                    { src: 'images/09-04-Engagement-Specialist.jpg', ratio: 'landscape' },
+                    { src: 'images/09-03-Engagement-Specialist.jpg', ratio: 'portrait', focus: 'left' },
+                    { src: 'images/09-01-Engagement-Specialist.jpg', ratio: 'portrait', focus: 'left' }
+                ]
+            ],
+
+            [
+                'full-time',
+                'Web Application Developer',
+                'MoreManufacturing.com',
+                'Developed web application and ERP-related solutions using C#, JavaScript, and SQL, helping improve internal business processes and digital delivery.',
+                'พัฒนาเว็บแอปพลิเคชันและระบบที่เกี่ยวข้องกับ ERP โดยใช้ C#, JavaScript และ SQL เพื่อเพิ่มประสิทธิภาพการทำงานภายในองค์กร',
+                ['Web Applications', 'C#', 'JavaScript', 'SQL', 'ERP'],
+                [
+                    'images/10-01-Web-dev2.jpg',
+                    'images/10-02-Web-dev2.jpg',
+                    { src: 'images/10-03-Web-dev2.jpg' },
+                    'images/10-04-Web-dev2.jpg',
+                ]
+            ],
+
+            [
+                'full-time',
+                'Data Scientist / R&D Developer',
+                'JOBBKK.COM',
+                'Developed data-platform and machine-learning solutions, including data-lake capabilities, job recommendation, salary insights, and chatbot-related tools.',
+                'พัฒนาแพลตฟอร์มข้อมูลและโซลูชัน machine learning เช่น data lake ระบบแนะนำงาน ข้อมูลเงินเดือน และเครื่องมือ chatbot',
+                ['Data Science', 'Machine Learning', 'Data Lake', 'Web Development', 'Recruitment Tech'],
+                [
+                    'images/11-01-Webdev-Data-Sceince.jpg',
+                    'images/11-03-Webdev-Data-Sceince.jpg',
+                    { src: 'images/11-02-Webdev-Data-Sceince.jpg'},
+                    'images/11-04-Webdev-Data-Sceince.jpg'
+                ]
+            ],
+
+            [
+                'full-time',
+                'Data Scientist, Capacity Management',
+                'Refinitiv',
+                'Built analytical models, forecasting approaches, and interactive dashboards to support infrastructure capacity planning and data-driven decisions.',
+                'พัฒนาโมเดลวิเคราะห์ การพยากรณ์ และแดชบอร์ดเชิงโต้ตอบ เพื่อสนับสนุนการวางแผน capacity และการตัดสินใจด้วยข้อมูล',
+                ['Data Science', 'Forecasting', 'Financial Data', 'Tableau', 'Power BI'],
+                [
+                    { src: 'images/12-03-Data-Scientist.jpg', ratio: 'landscape' },
+                    { src: 'images/12-01-Data-Scientist.jpg', ratio: 'landscape' },
+                    { src: 'images/12-02-Data-Scientist.jpg', ratio: 'portrait' },
+                    { src: 'images/12-04-Data-Scientist.jpg', ratio: 'portrait' }
+                ]
+            ],
+
+            [
+                'full-time',
+                'AI Researcher in Healthcare & Data Networking',
+                'Universidad Politécnica de Cartagena',
+                'Conducted doctoral-level applied AI research in healthcare, including deep reinforcement learning, medical imaging, natural-language processing, and data networking.',
+                'ทำวิจัยระดับปริญญาเอกด้าน AI ประยุกต์ในงานสุขภาพ ครอบคลุม deep reinforcement learning, medical imaging, NLP และ data networking',
+                ['PhD Research', 'Applied AI', 'Healthcare', 'Machine Learning', 'NLP'],
+                [
+                    { src: 'images/13-01-AI-researcher.jpg', ratio: 'landscape' },
+                    { src: 'images/13-02-AI-researcher.jpg', ratio: 'landscape' },
+                    'images/13-03-AI-researcher.jpg',
+                    'images/13-04-AI-researcher.jpg'
+                ]
+            ],
+
+            [
+                'full-time',
+                'IT Generalist / Business Analyst & Project Manager',
+                'CCA, Baitong Thai Restaurant, Mekong Asian Market',
+                'Delivered practical technology, business-analysis, website, automation, and operational-support solutions for small businesses and community organizations.',
+                'สนับสนุนงาน IT การวิเคราะห์ธุรกิจ เว็บไซต์ ระบบอัตโนมัติ และการปฏิบัติการให้ธุรกิจขนาดเล็กและองค์กรชุมชน',
+                ['IT Support', 'Business Analysis', 'Project Management', 'Automation', 'Community'],
+                [
+                    { src: 'images/14-03-IT.jpg', ratio: 'portrait-tall' },
+                    { src: 'images/14-01-IT.jpg', ratio: 'portrait' },
+                    'images/14-02-IT.jpg',
+                    'images/14-04-IT.jpg'
+                ]
+            ],
+
+            [
+                'full-time',
+                'Helicopter Mechanic',
+                'U.S. Army Reserve',
+                'Serves in a precision-oriented aircraft-maintenance role requiring procedural discipline, safety awareness, teamwork, accountability, and technical reliability.',
+                'ปฏิบัติหน้าที่ด้านการซ่อมบำรุงอากาศยาน ซึ่งต้องอาศัยวินัย ความปลอดภัย การทำงานเป็นทีม ความรับผิดชอบ และความแม่นยำทางเทคนิค',
+                ['U.S. Army Reserve', 'Maintenance', 'Safety', 'Reliability', 'Teamwork'],
+                [
+                    'images/15-03-Army.jpg',
+                    'images/15-01-Army.jpg',
+                    { src: 'images/15-02-Army.jpg', ratio: 'portrait' },
+                    { src: 'images/15-04-Army.jpg', ratio: 'portrait' }
+                ]
+            ],
+
+            [
+                'full-time',
+                'Generative AI Trust & Safety Specialist',
+                'Meta',
+                'Tested generative-AI systems through structured prompts, identified potential safety vulnerabilities, and provided feedback to support safer, policy-aligned model behavior.',
+                'ทดสอบระบบ Generative AI ด้วย prompt อย่างเป็นระบบ วิเคราะห์ความเสี่ยงด้านความปลอดภัย และให้ข้อเสนอแนะเพื่อให้โมเดลสอดคล้องกับนโยบาย',
+                ['AI Safety', 'Trust & Safety', 'Data Analysis', 'Quality', 'Policy'],
+                [
+                    'images/16-01-Ai-Safety-Analyst.jpg',
+                    'images/16-02-Ai-Safety-Analyst.jpg',
+                    { src: 'images/16-03-Ai-Safety-Analyst.jpg', ratio: 'portrait' },
+                    { src: 'images/16-04-Ai-Safety-Analyst.jpg', ratio: 'portrait' }
+                ]
+            ],
+
+            [
+                'full-time',
+                'Data Engineer / Scientist',
+                'California Department of Health Care Services',
+                'Builds data-quality, reporting, dashboard, accessibility, and workflow improvements that support statewide healthcare-program oversight and public-service decision-making.',
+                'พัฒนาระบบข้อมูล รายงาน แดชบอร์ด การเข้าถึงข้อมูล และ workflow เพื่อสนับสนุนการกำกับดูแลโครงการสุขภาพภาครัฐและการตัดสินใจเชิงบริการสาธารณะ',
+                ['Data Engineering', 'BI', 'Healthcare Data', 'Data Quality', 'Public Sector'],
+                ['images/17-01-Data-Engineer.jpg', 'images/17-02-Data-Engineer.jpg']
+            ],
+
+            [
+                'freelance',
+                'Guest Speaker',
+                'UTCC | Eduzone Expo',
+                'Shared professional knowledge and real-world experience with learners, translating practical career and technology insights into accessible lessons.',
+                'แบ่งปันความรู้และประสบการณ์การทำงานจริงแก่ผู้เรียน ถ่ายทอดแนวคิดด้านอาชีพและเทคโนโลยีให้เข้าใจง่าย',
+                ['Public Speaking', 'Education', 'Knowledge Sharing'],
+                [
+                    'images/1014-01-Guest-Speaker-in-Edu-Expo.jpg',
+                    'images/1015-01-Guest-Speaker-in-UTCC.jpg',
+                    'images/1015-02-Guest-Speaker-in-UTCC.png',
+                    'images/1015-03-Guest-Speaker-in-UTCC.jpg'
+                ]
+            ],
+
+            [
+                'freelance',
+                'Independent Forex Market Trader',
+                'Self-Directed Trading',
+                'Researched foreign-exchange markets using technical analysis, economic indicators, market news, structured risk management, and personal trading records.',
+                'ศึกษาและวิเคราะห์ตลาดแลกเปลี่ยนเงินตราโดยใช้ technical analysis ตัวชี้วัดเศรษฐกิจ ข่าวตลาด การบริหารความเสี่ยง และบันทึกการตัดสินใจของตนเอง',
+                ['Market Research', 'Technical Analysis', 'Economic Indicators', 'Risk Management'],
+                ['images/1012-01-Forex-Trader.jpg', 'images/1012-02-Forex-Trader.jpg']
+            ],
+
+            [
+                'freelance',
+                'Insurance Agent',
+                'Part-Time / Freelance',
+                'Advised clients on insurance products and processes, emphasizing trust, needs assessment, product knowledge, and clear communication.',
+                'ให้คำแนะนำลูกค้าเกี่ยวกับผลิตภัณฑ์และขั้นตอนด้านประกัน โดยเน้นความไว้วางใจ การวิเคราะห์ความต้องการ และการสื่อสารที่ชัดเจน',
+                ['Insurance', 'Advisory', 'Sales', 'Client Service'],
+                ['images/1016-01-Life-Insurance-Agent.jpg', 'images/1016-02-Life-Insurance-Agent-US.jpg']
+            ],
+
+            [
+                'freelance',
+                'Russian Interpreter',
+                'Part-Time / Freelance',
+                'Enabled clear communication among Thai, Russian, and international clients in service, healthcare, business, and community settings.',
+                'ช่วยให้การสื่อสารระหว่างภาษาไทย รัสเซีย และนานาชาติเป็นไปอย่างชัดเจนในบริบทบริการ สุขภาพ ธุรกิจ และชุมชน',
+                ['Russian', 'Interpretation', 'Cross-Cultural', 'Communication'],
+                [{ src: 'images/1021-01-Russian-Interpreter.jpg', ratio: 'wide' }]
+            ],
+
+            [
+                'freelance',
+                'Russian Language Teacher',
+                'Public School in Pattaya',
+                'Taught Russian language to high-school learners, adapting lessons and communication methods to different learner needs.',
+                'สอนภาษารัสเซียให้กับนักเรียนระดับมัธยมศึกษา โดยปรับรูปแบบการสอนและการสื่อสารให้เหมาะกับผู้เรียนแต่ละกลุ่ม',
+                ['Russian', 'Teaching', 'Youth Education', 'Communication'],
+                [
+                    'images/1009-01-Russian-Teacher-for-Thai-student.jpg',
+                    { src: 'images/1009-02-Russian-Teacher-for-Thai-student.jpg', focus: 'left' },
+                    'images/1009-03-Russian-Teacher-for-Thai-student.jpg',
+                    { src: 'images/1009-04-Russian-Teacher-for-Thai-student.jpg', focus: 'left' }
+                ]
+            ],
+
+            [
+                'freelance',
+                'Independent Used Car Reseller & Parts Seller',
+                'Part-Time / Freelance',
+                'Sourced affordable used vehicles, improved their condition and presentation for resale, and sold selected aftermarket parts. Managed vehicle evaluation, repair coordination, pricing, customer communication, negotiation, and transactions.',
+                'ค้นหาและจัดหารถมือสองราคาดี ปรับสภาพและภาพลักษณ์รถเพื่อขายต่อ รวมถึงจำหน่ายอะไหล่และชิ้นส่วนแต่งรถบางรายการ ดูแลการประเมินรถ การประสานงานซ่อม การตั้งราคา การสื่อสารกับลูกค้า การเจรจา และการซื้อขาย',
+                ['Vehicle Sourcing', 'Vehicle Resale', 'Repair Coordination', 'Automotive Parts', 'Negotiation', 'Sales'],
+                [
+                    'images/1011-01-Used-Car-Sales.jpg',
+                    'images/1011-02-Used-Car-Sales.jpg',
+                    'images/1011-03-Used-Car-Sales.jpg',
+                    'images/1011-04-Used-Car-Sales.jpg',
+                ]
+            ],
+
+            [
+                'freelance',
+                'Language Camp Co-Organizer',
+                'Pattaya School District',
+                'Co-organized language-learning activities for students, combining event planning, educational engagement, teamwork, and community participation.',
+                'ร่วมจัดกิจกรรมค่ายภาษาให้นักเรียน ผสานการวางแผนกิจกรรม การเรียนรู้ การทำงานเป็นทีม และการมีส่วนร่วมของชุมชน',
+                ['Event Coordination', 'Education', 'Community', 'Teamwork'],
+                [
+                    'images/1010-01-Russian-Language-Camp-for-Thai-student.jpg',
+                    'images/1010-02-Russian-Language-Camp-for-Thai-student.jpg'
+                ]
+            ],
+
+            [
+                'freelance',
+                'Credit Card Agent',
+                'Part-Time / Freelance',
+                'Supported customer-facing financial-services work by clearly explaining credit-card products, application processes, requirements, and customer options.',
+                'สนับสนุนงานบริการด้านบัตรเครดิต อธิบายผลิตภัณฑ์ ขั้นตอนสมัคร เงื่อนไข และทางเลือกต่าง ๆ ให้ลูกค้าเข้าใจอย่างชัดเจน',
+                ['Sales', 'Financial Services', 'Customer Support', 'Communication'],
+                [{ src: 'images/1013-01-Credit-Card-Sales.jpg', ratio: 'wide' }]
+            ],
+
+            [
+                'freelance',
+                'Dessert Seller',
+                'Part-Time / Freelance',
+                'Operated a small food-selling activity, managing products, customer interactions, daily sales, and basic micro-business operations.',
+                'ดำเนินกิจการขายขนมขนาดเล็ก ดูแลสินค้า ลูกค้า ยอดขายประจำวัน และการบริหารงานพื้นฐานของธุรกิจ',
+                ['Small Business', 'Food', 'Customer Service', 'Operations'],
+                ['images/1017-01-Dessert-Seller.jpg']
+            ],
+
+            [
+                'freelance',
+                'Online Order Fulfillment',
+                'Part-Time / Freelance',
+                'Supported online-order fulfillment by preparing orders accurately, managing item availability, and meeting customer delivery expectations.',
+                'สนับสนุนการจัดเตรียมคำสั่งซื้อออนไลน์ให้ถูกต้อง ตรวจสอบความพร้อมของสินค้า และส่งมอบตามความคาดหวังของลูกค้า',
+                ['E-Commerce', 'Fulfillment', 'Accuracy', 'Operations'],
+                [
+                    { src: 'images/1019-01-Shopper.jpg', ratio: 'portrait', focus: 'top' },
+                    { src: 'images/1019-02-Shopper.jpg', ratio: 'portrait' }
+                ]
+            ],
+
+            [
+                'freelance',
+                'Food Delivery Shopper',
+                'Part-Time / Freelance',
+                'Fulfilled grocery and food-delivery orders by selecting items accurately, handling substitutions, coordinating delivery, and maintaining reliable customer service.',
+                'จัดเตรียมและส่งคำสั่งซื้ออาหารหรือของใช้ เลือกสินค้าอย่างถูกต้อง จัดการสินค้าทดแทน ประสานการส่งมอบ และดูแลลูกค้าอย่างน่าเชื่อถือ',
+                ['Food Delivery', 'Order Fulfillment', 'Customer Service', 'Logistics'],
+                ['images/1018-01-DoorDasher.jpg']
+            ],
+
+            [
+                'freelance',
+                'Survey Field Interviewer',
+                'Part-Time / Freelance',
+                'Collected field-survey data through direct interviews, following structured questions and maintaining consistency, accuracy, and respondent respect.',
+                'เก็บข้อมูลภาคสนามผ่านการสัมภาษณ์ตามแบบสอบถาม โดยรักษาความสม่ำเสมอ ความถูกต้อง และความเคารพต่อผู้ให้ข้อมูล',
+                ['Survey', 'Fieldwork', 'Data Collection', 'Data Quality'],
+                [
+                    'images/1022-01-Survey-Field-Interviewer.jpg',
+                    'images/1022-02-Survey-Field-Interviewer.jpg',
+                    'images/1022-03-Survey-Field-Interviewer.jpg'
+                ]
+            ],
+
+            [
+                'freelance',
+                'Canned Food Line Worker',
+                'Part-Time / Freelance',
+                'Contributed to production-line operations where safety, pace, quality checks, teamwork, and repeatable processes were essential.',
+                'ทำงานในสายการผลิตอาหารกระป๋อง ซึ่งให้ความสำคัญกับความปลอดภัย คุณภาพ ความรวดเร็ว การทำงานเป็นทีม และขั้นตอนที่สม่ำเสมอ',
+                ['Manufacturing', 'Quality', 'Safety', 'Teamwork'],
+                [{ src: 'images/1025-01-cannedfood.jpg', ratio: 'landscape' }]
+            ],
+
+            [
+                'freelance',
+                'Online Community Founder & Administrator',
+                'Part-Time / Freelance',
+                'Founded and administered an online community, shaping content, member engagement, moderation practices, and community operating guidelines.',
+                'ก่อตั้งและดูแลชุมชนออนไลน์ วางแนวทางด้านเนื้อหา การมีส่วนร่วมของสมาชิก การดูแลชุมชน และกติกาการดำเนินงาน',
+                ['Community Building', 'Administration', 'Digital Content', 'Engagement'],
+                [
+                    { src: 'images/1024-01-Thai-fb-commu.jpg', ratio: 'landscape' },
+                    { src: 'images/1024-02-Thai-fb-commu.jpg', ratio: 'landscape' }
+                ]
+            ],
+
+            [
+                'freelance',
+                'Web Developer & Webmaster',
+                'Thai Community in Russia',
+                'Built and maintained a web presence for the Thai community in Russia, combining web development, content management, and cross-cultural community communication.',
+                'พัฒนาและดูแลเว็บไซต์สำหรับชุมชนไทยในรัสเซีย ผสานทักษะด้านเว็บ การจัดการเนื้อหา และการสื่อสารข้ามวัฒนธรรม',
+                ['Webmaster', 'Community', 'Web Development', 'Cross-Cultural'],
+                [
+                    { src: 'images/1023-02-Meekao-webmaster.png', ratio: 'landscape' },
+                    { src: 'images/1023-01-Meekao-webmaster.jpg', ratio: 'landscape' }
+                ]
+            ]
         ];
         function placeholder(label) {return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900"><rect width="900" height="900" fill="#d8ebf2"/><circle cx="720" cy="170" r="260" fill="#146ba0" opacity=".13"/><text x="450" y="430" text-anchor="middle" font-family="Arial" font-size="43" font-weight="700" fill="#146ba0">ADD IMAGE</text><text x="450" y="485" text-anchor="middle" font-family="Arial" font-size="23" fill="#607080">${label}</text></svg>`)}
         function normalize(photo, title) {return typeof photo === 'string' ? {src: photo, ratio: 'square', focus: ''} : {src: photo.src, ratio: photo.ratio || 'square', focus: photo.focus || ''}}
-        function jobSection(j, i) {const [g, title, org, desc, tags, photos] = j, firstFull = i === 0 ? 'id="full-time"' : '', firstFree = g === 'freelance' && jobs.slice(0, i).every(x => x[0] !== 'freelance') ? 'id="freelance"' : '', images = photos.length ? photos.map(p => normalize(p, title)) : [{src: placeholder(title), ratio: 'square', focus: ''}]; return `<section class="job" ${firstFull} ${firstFree}><div class="copy"><div class="eyebrow">${g === 'full-time' ? 'FULL-TIME CAREER' : 'PART-TIME / FREELANCE'} • ${String(i + 1).padStart(2, '0')}</div><h2 class="role">${title}</h2><div class="org">${org}</div><p class="desc">${desc}</p><div class="tags">${tags.map(t => `<span class="tag">${t}</span>`).join('')}</div></div><div class="visual"><div class="gallery ${images.length === 1 ? 'one' : ''}">${images.map((image, n) => `<div class="image-frame ratio-${image.ratio}"><img class="lazy ${image.focus ? 'focus-' + image.focus : ''}" src="images/placeholder.svg" data-src="${image.src}" alt="${title}, image ${n + 1}" loading="lazy"></div>`).join('')}</div><div class="badge">${String(i + 1).padStart(2, '0')}</div></div></section>`}
+        function jobSection(j, i) {
+            const [g, title, org, desc, descThai, tags, photos] = j;
+
+            const firstFull = i === 0 ? 'id="full-time"' : '';
+
+            const firstFree =
+                g === 'freelance' &&
+                jobs.slice(0, i).every(x => x[0] !== 'freelance')
+                    ? 'id="freelance"'
+                    : '';
+
+            const images = photos.length
+                ? photos.map(p => normalize(p, title))
+                : [{ src: placeholder(title), ratio: 'square', focus: '' }];
+
+            return `
+                <section class="job" ${firstFull} ${firstFree}>
+                    <div class="copy">
+                        <div class="eyebrow">
+                            ${g === 'full-time' ? 'FULL-TIME CAREER' : 'PART-TIME / FREELANCE'}
+                            • ${String(i + 1).padStart(2, '0')}
+                        </div>
+
+                        <h2 class="role">${title}</h2>
+
+                        <div class="org">${org}</div>
+
+                        <p class="desc">${desc}</p>
+
+                        <p class="desc thai-desc">${descThai}</p>
+
+                        <div class="tags">
+                            ${tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                        </div>
+                    </div>
+
+                    <div class="visual">
+                        <div class="gallery ${images.length === 1 ? 'one' : ''}">
+                            ${images.map((image, n) => `
+                                <div class="image-frame ratio-${image.ratio}">
+                                    <img
+                                        class="lazy ${image.focus ? 'focus-' + image.focus : ''}"
+                                        src="images/placeholder.svg"
+                                        data-src="${image.src}"
+                                        alt="${title}, image ${n + 1}"
+                                        loading="lazy"
+                                    >
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <div class="badge">${String(i + 1).padStart(2, '0')}</div>
+                    </div>
+                </section>
+            `;
+        }
+
         document.getElementById('jobs').innerHTML = jobs.map(jobSection).join('');
         const lazyObserver = new IntersectionObserver(es => es.forEach(e => {if (e.isIntersecting) {const img = e.target; img.src = img.dataset.src; img.classList.add('loaded'); lazyObserver.unobserve(img)} }), {rootMargin: '500px 0px'}); document.querySelectorAll('img.lazy').forEach(i => lazyObserver.observe(i));
         const sections = [...document.querySelectorAll('section')], counter = document.getElementById('counter'), loader = document.getElementById('loader'); const sectionObserver = new IntersectionObserver(es => es.forEach(e => {if (e.isIntersecting) {const n = sections.indexOf(e.target) + 1; counter.textContent = `${String(n).padStart(2, '0')} / ${String(sections.length).padStart(2, '0')}`; loader.textContent = Math.round(n / sections.length * 100) + '%'} }), {threshold: .55}); sections.forEach(s => sectionObserver.observe(s));
