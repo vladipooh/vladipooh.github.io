@@ -142,11 +142,19 @@
 
                 // thumbnail: Blogger thumbnail -> first <img> in content -> placeholder
                 let thumb = e.media$thumbnail ? e.media$thumbnail.url : '';
-                if (!thumb) {
-                    const m = content.match(/<img[^>]+src=["']([^"']+)["']/i);
-                    thumb = m ? m[1] : 'img/poohlogo.png';
-                }
-                thumb = thumb.replace(/\/s\d+(-c)?\//, '/s640-c/');
+                    if (!thumb) {
+                        const m = content.match(/<img[^>]+src=["']([^"']+)["']/i);
+                        thumb = m ? m[1] : 'img/poohlogo.png';
+                    }
+                    if (thumb && thumb !== 'img/poohlogo.png') {
+                        if (thumb.includes('googleusercontent.com') || thumb.includes('blogspot.com')) {
+                            thumb = thumb.replace(/\/s\d+(?:-w\d+-h\d+)?(-c)?\//, '/s640-c/')
+                                        .replace(/\/w\d+-h\d+([^/]*)\//, '/s640-c/')
+                                        .replace(/\/s\d+-b-k-no\//, '/s640-c/')
+                                        .replace(/=s\d+(?:-w\d+-h\d+)?(-c)?/, '=s640-c')
+                                        .replace(/=w\d+-h\d+([^?]*)/, '=s640-c');
+                        }
+                    }
 
                 html += `<div class="col-lg-4 mb-5">
                             <div class="position-relative mb-4">
