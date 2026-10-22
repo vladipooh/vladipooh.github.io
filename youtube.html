@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Phuwadol Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา</title>
+    <title>Phuwadol (Paul) Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Phuwadol Viroonluecha, ภูวดล วิิรุฬห์ลือชา, Data Scientist, data analyst, business intelligence engineer" name="keywords">
-    <meta content="Phuwadol Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา - Data Scientist" name="description">
+    <meta
+        content="Phuwadol (Paul) Viroonluecha, ภูวดล วิรุฬห์ลือชา, IT Systems Analyst — City of Kenmore | Public-Sector IT Leadership | Data & AI Background"
+        name="keywords">
+    <meta content="Phuwadol (Paul) Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา - IT Systems Analyst" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -113,36 +115,56 @@
     <script src="js/footer.js"></script>
     <script>appendContentToFooter();</script>
     <script>
-    // RSS2JSON API ที่แปลง RSS เป็น JSON แล้วพร้อมใช้งาน
-    const url = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UC58QgysOyqYk4Uhc_rwXgpw';
+        (function () {
+            const channelId = 'UC58QgysOyqYk4Uhc_rwXgpw';
+            const feedUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + 'UC58QgysOyqYk4Uhc_rwXgpw';
+            const proxies = [
+                u => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(u),
+                u => 'https://corsproxy.io/?' + encodeURIComponent(u)
+            ];
+            const container = document.getElementById('rss-feed');
+            const esc = s => String(s).replace(/[&<>"']/g, c => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[c]));
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            const entriesContainer = document.getElementById('rss-feed');
+            async function getXml() {
+                for (const p of proxies) {
+                    try {
+                        const r = await fetch(p(feedUrl));
+                        if (r.ok) return await r.text();
+                    } catch (e) { /* try next proxy */ }
+                }
+                throw new Error('All proxies failed');
+            }
 
-            const videos = data.items.slice(0, 21); // จำกัด 21 รายการ
+            function render(xmlText) {
+                const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
+                const entries = Array.from(xml.getElementsByTagName('entry')).slice(0, 21);
+                container.innerHTML = entries.map(en => {
+                    const get = (tag) => (en.getElementsByTagName(tag)[0] || {}).textContent || '';
+                    const id = get('yt:videoId');
+                    const title = get('title');
+                    const published = get('published');
+                    const desc = get('media:description');
+                    const link = 'https://www.youtube.com/watch?v=' + id;
+                    const thumb = 'https://i.ytimg.com/vi/' + id + '/mqdefault.jpg';
+                    return `<div class="col-lg-4 mb-5">
+                        <div class="position-relative mb-4">
+                            <img class="img-fluid rounded w-100" src="${thumb}" alt="${esc(title)} Thumbnail" loading="lazy">
+                        </div>
+                        <h3 class="mb-4"><a href="${link}" target="_blank" rel="noopener">${esc(title)}</a></h3>
+                        <p>Published on: ${new Date(published).toDateString()}</p>
+                        <p>Description: ${esc(desc.slice(0, 50))}...</p>
+                    </div>`;
+                }).join('');
+            }
 
-            videos.forEach(item => {
-                const entryDiv = document.createElement('div');
-                entryDiv.classList.add('col-lg-4', 'mb-5');
-
-                entryDiv.innerHTML = `
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="${item.thumbnail}" alt="${item.title} Thumbnail">
-                    </div>
-                    <h3 class="mb-4"><a href="${item.link}" target="_blank">${item.title}</a></h3>
-                    <p>Published on: ${new Date(item.pubDate).toDateString()}</p>
-                    <p>Description: ${item.description.slice(0, 50)}...</p>
-                `;
-
-                entriesContainer.appendChild(entryDiv);
+            getXml().then(render).catch(err => {
+                console.error('Error fetching data:', err);
+                container.innerHTML = '<p class="col-12">Unable to load videos. <a href="https://www.youtube.com/channel/' + channelId + '" target="_blank">Open YouTube channel</a></p>';
             });
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
-	</script>
+        })();
+        </script>
 
 </body>
                 <!-- <div class="col-lg-4 mb-5">

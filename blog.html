@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Phuwadol Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา</title>
+    <title>Phuwadol (Paul) Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Phuwadol Viroonluecha, ภูวดล วิิรุฬห์ลือชา, Data Scientist, data analyst, business intelligence engineer" name="keywords">
-    <meta content="Phuwadol Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา - Data Scientist" name="description">
+    <meta
+        content="Phuwadol (Paul) Viroonluecha, ภูวดล วิรุฬห์ลือชา, IT Systems Analyst — City of Kenmore | Public-Sector IT Leadership | Data & AI Background"
+        name="keywords">
+    <meta content="Phuwadol (Paul) Viroonluecha's Personal Website - ภูวดล วิรุฬห์ลือชา - IT Systems Analyst" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -113,35 +115,63 @@
     <script src="js/footer.js"></script>
     <script>appendContentToFooter();</script>
     <script>
-        const rssFeedURL = 'https://api.rss2json.com/v1/api.json?rss_url=https://phviro.blogspot.com/feeds/posts/default?alt=rss';
+        function renderBlogFeed(data) {
+            const entries = (data.feed && data.feed.entry) || [];
+            const container = document.getElementById('rss-feed');
 
-		fetch(rssFeedURL)
-			.then(response => response.json())
-			.then(data => {
-				const items = data.items;
-				let html = '';
+            if (!entries.length) {
+                container.innerHTML = '<p class="col-12">No posts found.</p>';
+                return;
+            }
 
-				items.slice(0, 10).forEach(item => {
-				const largeThumbnail = item.thumbnail.replace(/s72(-c)?/, 's640');
+            const stripHtml = html => {
+                const div = document.createElement('div');
+                div.innerHTML = html || '';
+                return (div.textContent || '').trim();
+            };
+            const esc = s => String(s).replace(/[&<>"']/g, c => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[c]));
 
-				html += `<div class="col-lg-4 mb-5">
-							<div class="position-relative mb-4">
-							<div class="thumbnail-wrapper">
-								<img class="img-fluid rounded w-100" src="${largeThumbnail}" alt="${item.title} Thumbnail">
-								</div>
-							</div>
-							<h6 class="font-weight-bold text-primary"><a href="${item.link}" target="_blank">${item.title}</a></h6>
-							<small>Published on: ${new Date(item.pubDate).toDateString()}</small><br>
-							<p>${item.description.slice(0, 100)}...</p>
-							<a class="btn btn-sm btn-outline-primary py-2 mt-2" href="${item.link}" target="_blank">Read More</a>
-						</div>`;
-			});
+            let html = '';
+            entries.slice(0, 20).forEach(e => {
+                const title = e.title.$t;
+                const link = (e.link.find(l => l.rel === 'alternate') || {}).href || '#';
+                const content = e.content ? e.content.$t : (e.summary ? e.summary.$t : '');
+                const text = stripHtml(content);
 
+                // thumbnail: Blogger thumbnail -> first <img> in content -> placeholder
+                let thumb = e.media$thumbnail ? e.media$thumbnail.url : '';
+                if (!thumb) {
+                    const m = content.match(/<img[^>]+src=["']([^"']+)["']/i);
+                    thumb = m ? m[1] : 'img/poohlogo.png';
+                }
+                thumb = thumb.replace(/\/s\d+(-c)?\//, '/s640-c/');
 
-				document.getElementById('rss-feed').innerHTML = html;
-			})
-			.catch(error => console.error('Error loading feed:', error));
+                html += `<div class="col-lg-4 mb-5">
+                            <div class="position-relative mb-4">
+                                <div class="thumbnail-wrapper">
+                                    <img class="img-fluid rounded w-100" src="${thumb}" alt="${esc(title)} Thumbnail">
+                                </div>
+                            </div>
+                            <h6 class="font-weight-bold text-primary"><a href="${link}" target="_blank" rel="noopener">${esc(title)}</a></h6>
+                            <small>Published on: ${new Date(e.published.$t).toDateString()}</small><br>
+                            <p>${esc(text.slice(0, 100))}...</p>
+                            <a class="btn btn-sm btn-outline-primary py-2 mt-2" href="${link}" target="_blank" rel="noopener">Read More</a>
+                        </div>`;
+            });
+            container.innerHTML = html;
+        }
 
+        (function loadBlogFeed() {
+            const s = document.createElement('script');
+            s.src = 'https://phviro.blogspot.com/feeds/posts/default?alt=json-in-script&max-results=20&callback=renderBlogFeed';
+            s.onerror = () => {
+                document.getElementById('rss-feed').innerHTML =
+                    '<p class="col-12">Unable to load posts. <a href="https://phviro.blogspot.com/">Read on Blogger</a></p>';
+            };
+            document.body.appendChild(s);
+        })();
     </script>
 </body>
 
